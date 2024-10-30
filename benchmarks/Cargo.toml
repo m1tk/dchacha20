@@ -1,0 +1,14 @@
+[package]
+name = "benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+criterion = { version = "0.5.1", features = ["html_reports", "csv_output"] }
+rand = "0.8.5"
+openssl = "0.10.64"
+chacha20 = "0.9.1"
+
+[[bench]]
+harness = false
+name = "cipher"
