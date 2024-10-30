@@ -35,6 +35,7 @@ version = "0.1.0"
 dependencies = [
  "chacha20",
  "criterion",
+ "dchacha20",
  "openssl",
  "rand",
 ]
@@ -257,6 +258,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5efa2b3d7902f4b634a20cae3c9c4e6209dc4779feb6863329607560143efa70"
 dependencies = [
  "memchr",
+]
+
+[[package]]
+name = "dchacha20"
+version = "0.1.0"
+dependencies = [
+ "zeroize",
 ]
 
 [[package]]
@@ -868,3 +876,9 @@ dependencies = [
  "quote",
  "syn",
 ]
+
+[[package]]
+name = "zeroize"
+version = "1.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde"

@@ -1,7 +1,11 @@
 [package]
-name = "dchacha20_optimized"
+name = "dchacha20"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 zeroize = "1.8.1"
+
+[dev-dependencies]
+hex-literal = "0.4.1"
+rand = "0.8.5"
