@@ -1,18 +1,18 @@
-use zeroize::Zeroizing;
+use std::{ops::AddAssign, simd::{u32x16, u8x64}};
 
 pub struct ChaCha20 {
     /// This is where the initial state is stored
-    state: Zeroizing<[u32; 16]>,
+    state: u32x16,
     /// Calculated keystream
-    keystream: Zeroizing<[u32; 16]>,
+    keystream: u32x16,
     /// Keystream as u8 buffer
-    keystream_buffer: Zeroizing<[u8; 64]>
+    keystream_buffer: u8x64
 }
 
 impl ChaCha20 {
     pub fn new(key: &[u8; 32], nonce: &[u8; 12]) -> Self {
         Self {
-            state: Zeroizing::new([
+            state: u32x16::from_array([
                 /*
                 cccccccc cccccccc cccccccc cccccccc
                 kkkkkkkk kkkkkkkk kkkkkkkk kkkkkkkk
@@ -29,8 +29,8 @@ impl ChaCha20 {
                 // Bit counter + nonce
                 0, u32_from_le_bytes(&nonce[..4]), u32_from_le_bytes(&nonce[4..8]), u32_from_le_bytes(&nonce[8..12]),
             ]),
-            keystream: Zeroizing::new([0u32; 16]),
-            keystream_buffer: Zeroizing::new([0u8; 64])
+            keystream: u32x16::from_array([0u32; 16]),
+            keystream_buffer: u8x64::from_array([0u8; 64])
         }
     }
 
@@ -66,11 +66,9 @@ impl ChaCha20 {
     }
 
     fn block_fn(&mut self) {
-        self.keystream.copy_from_slice(self.state.as_ref());
-        Self::rounds(&mut self.keystream);
-        for (k, i) in self.keystream.iter_mut().zip(self.state.iter()) {
-            *k = k.wrapping_add(*i);
-        }
+        self.state.copy_to_slice(self.keystream.as_mut_array());
+        Self::rounds(self.keystream.as_mut_array());
+        self.keystream.add_assign(&self.state);
         self.state[12] = self.state[12].wrapping_add(1);
     }
 
@@ -84,8 +82,8 @@ impl ChaCha20 {
         self.block_fn();
         self.convert_keystream_to_u8_arr();
 
-        for (byte, k) in buff.iter_mut().zip(self.keystream_buffer.iter()) {
-            *byte ^= *k;
+        for (i, byte) in buff.iter_mut().enumerate() {
+            *byte ^= self.keystream_buffer[i];
         }
     }
 

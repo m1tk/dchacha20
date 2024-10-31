@@ -1,4 +1,5 @@
 #![feature(portable_simd)]
+#![feature(slice_pattern)]
 mod chacha20;
 mod dchacha20;
 

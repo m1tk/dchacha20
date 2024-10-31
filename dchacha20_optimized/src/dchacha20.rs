@@ -1,21 +1,26 @@
+use core::slice::SlicePattern;
+use std::{ops::AddAssign, simd::{u32x16, u32x4, u32x8, u8x64}};
+
 use zeroize::Zeroizing;
 
 pub struct DChaCha20 {
     /// This is where the initial state is stored
-    state: Zeroizing<[u32; 16]>,
+    state: u32x16,
     /// Calculated keystream
-    keystream: Zeroizing<[u32; 16]>,
+    keystream: u32x16,
     /// Keystream as u8 buffer
-    keystream_buffer: Zeroizing<[u8; 64]>,
+    keystream_buffer: u8x64,
     /// Digest for XORing previous ciphertext generated random bytes
-    prev_dig: Zeroizing<[u8; 64]>,
+    prev_dig: u8x64,
+    /// Temp storage for previous ciphertext
+    prev_ciph: Zeroizing<[u8; 64]>,
     xorshift: XorShift
 }
 
 impl DChaCha20 {
     pub fn new(key: &[u8; 32], nonce: &[u8; 12]) -> Self {
         Self {
-            state: Zeroizing::new([
+            state: u32x16::from_array([
                 /*
                 cccccccc cccccccc cccccccc cccccccc
                 kkkkkkkk kkkkkkkk kkkkkkkk kkkkkkkk
@@ -32,9 +37,10 @@ impl DChaCha20 {
                 // Bit counter + nonce
                 0, u32_from_le_bytes(&nonce[..4]), u32_from_le_bytes(&nonce[4..8]), u32_from_le_bytes(&nonce[8..12]),
             ]),
-            keystream: Zeroizing::new([0u32; 16]),
-            keystream_buffer: Zeroizing::new([0u8; 64]),
-            prev_dig: Zeroizing::new([0u8; 64]),
+            keystream: u32x16::from_array([0u32; 16]),
+            keystream_buffer: u8x64::from_array([0u8; 64]),
+            prev_dig: u8x64::from_array([0u8; 64]),
+            prev_ciph: Zeroizing::new([0u8; 64]),
             xorshift: XorShift::new()
         }
     }
@@ -71,11 +77,9 @@ impl DChaCha20 {
     }
 
     fn block_fn(&mut self) {
-        self.keystream.copy_from_slice(self.state.as_ref());
-        Self::rounds(&mut self.keystream);
-        for (k, i) in self.keystream.iter_mut().zip(self.state.iter()) {
-            *k = k.wrapping_add(*i);
-        }
+        self.state.copy_to_slice(self.keystream.as_mut_array());
+        Self::rounds(self.keystream.as_mut_array());
+        self.keystream.add_assign(&self.state);
         self.state[12] = self.state[12].wrapping_add(1);
     }
 
@@ -97,19 +101,27 @@ impl DChaCha20 {
     pub fn encrypt(&mut self, plaintext: &mut [u8]) {
         for chunk in plaintext.chunks_mut(64) {
             self.apply_keystream(chunk);
-            self.xorshift.set_seed(chunk.as_ref());
-            for byte in self.prev_dig.iter_mut() {
-                *byte ^= self.xorshift.next_random();
+            if chunk.len() == 64 {
+                self.prev_dig ^= u8x64::from_slice(chunk);
+            } else {
+                self.xorshift.set_seed(chunk.as_ref());
+                self.xorshift.xor_with_slice(self.prev_dig.as_mut_array());
             }
         }
     }
 
     pub fn decrypt(&mut self, ciphertext: &mut [u8]) {
         for chunk in ciphertext.chunks_mut(64) {
-            self.xorshift.set_seed(chunk.as_ref());
+            if chunk.len() != 64 {
+                self.xorshift.set_seed(chunk.as_ref());
+            } else {
+                self.prev_ciph.copy_from_slice(chunk.as_slice());
+            }
             self.apply_keystream(chunk);
-            for byte in self.prev_dig.iter_mut() {
-                *byte ^= self.xorshift.next_random();
+            if chunk.len() == 64 {
+                self.prev_dig ^= u8x64::from_slice(self.prev_ciph.as_slice());
+            } else {
+                self.xorshift.xor_with_slice(self.prev_dig.as_mut_array());
             }
         }
     }
@@ -128,32 +140,65 @@ fn u32_from_le_bytes(slice: &[u8]) -> u32 {
 
 
 struct XorShift {
-    state: Zeroizing<u32>
+    state: u32x8,
+    len: usize
 }
 
 impl XorShift {
     pub fn new() -> Self {
         Self {
-            state: Zeroizing::new(0)
+            state: u32x8::from_array([0; 8]),
+            len: 0
         }
     }
 
     pub fn set_seed(&mut self, seed: &[u8]) {
-        *self.state = 0;
-        for numb in seed.chunks(4) {
+        let s    = self.state.as_mut_array();
+        self.len = seed.len();
+        for (i, numb) in seed.chunks(4).take(8).enumerate() {
+            s[i] = 0;
             for (pos, byte) in numb.iter().enumerate() {
-                *self.state = self.state.wrapping_add(
+                s[i] = s[i].wrapping_add(
                     (*byte as u32) <<  (pos * 8)
                 );
             }
         }
     }
 
-    fn next_random(&mut self) -> u8 {
-        *self.state ^= *self.state << 13;
-        *self.state ^= *self.state >> 17;
-        *self.state ^= *self.state << 5;
-        (*self.state & 255) as u8
+    fn xor_with_slice(&mut self, slice: &mut [u8; 64]) {
+        if self.len < 16 {
+            let s = &mut self.state.as_mut_array()[0];
+            for b in &mut *slice {
+                *s ^= *s << 13;
+                *s ^= *s >> 17;
+                *s ^= *s << 5;
+                *b ^= (*s & 255) as u8;
+            }
+        } else if self.len < 32 {
+            let mut s = u32x4::from_slice(self.state.as_array()[0..4].as_slice());
+            let mut p = 0;
+            for _ in 0..16 {
+                s ^= s << 13;
+                s ^= s >> 17;
+                s ^= s << 5;
+                for b in 0..4 {
+                    slice[p] ^= (s[b] & 255) as u8;
+                    p += 1;
+                }
+            }
+        } else {
+            let mut s = u32x8::from_slice(self.state.as_array()[0..8].as_slice());
+            let mut p = 0;
+            for _ in 0..8 {
+                s ^= s << 13;
+                s ^= s >> 17;
+                s ^= s << 5;
+                for b in 0..8 {
+                    slice[p] ^= (s[b] & 255) as u8;
+                    p += 1;
+                }
+            }
+        }
     }
 }
 
@@ -169,7 +214,10 @@ mod tests {
         let key = hex!("00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f 10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d 1e 1f");
         let nonce = hex!("00 00 00 00 00 00 00 4a 00 00 00 00");
 
-        let msg = "Ladies and Gentlemen of the class of '99: If I could offer you only one tip for the future, sunscreen would be it.".as_bytes().to_vec();
+        let msg  = "Ladies and Gentlemen of the class of '99: If I could offer you only one tip for the future, sunscreen would be it.".as_bytes().to_vec();
+        let msg1 = "111111111".as_bytes().to_vec();
+        let msg2 = "1111111112222222222222222222".as_bytes().to_vec();
+        let msg3 = "1111111112222222222222222222333333".as_bytes().to_vec();
 
         let mut cipher = DChaCha20::new(&key, &nonce);
         let mut cipher1 = DChaCha20::new(&key, &nonce);
@@ -177,24 +225,41 @@ mod tests {
         let mut buffer1 = msg.clone();
         let mut buffer2 = msg.clone();
         let mut buffer3 = msg.clone();
+        let mut buffer4 = msg1.clone();
+        let mut buffer5 = msg2.clone();
+        let mut buffer6 = msg3.clone();
 
         cipher.encrypt(&mut buffer1);
         cipher.encrypt(&mut buffer2);
         cipher.encrypt(&mut buffer3);
+        cipher.encrypt(&mut buffer4);
+        cipher.encrypt(&mut buffer5);
+        cipher.encrypt(&mut buffer6);
 
-        assert_eq!(buffer1, hex!("e3647a29ded31528ef56bac70f7a7ac3b735c7444da42d99823ef9938c8ebfdcf05bb71a822c62981aa1ea608f47933f2ed755b62d9312ae72037674f3e93e24c9ac47dced09b0d02a6f3fb2659a3f04bf9e4aa7bca2d5a0bc1038db191fb11cedbfa743f4b76bd60a07cd985aa4f6017439"));
 
-        assert_eq!(buffer2, hex!("01cd51c0df81a6950ed03086fe09e8f64ca3230aa0e51a482edb8d3168f74deb8759df6a2b4822d9143663e2802a5ff296e8a29b3de51d7a2b908817131eafff3fcbd6de090ac37adafd49b58e92900815b8b062b8ff6ea6e55a3ac3115461a30ab730e341826732bb5b3ad427699f6c5fff"));
+        assert_eq!(buffer1, hex!("e3647a29ded31528ef56bac70f7a7ac3b735c7444da42d99823ef9938c8ebfdcf05bb71a822c62981aa1ea608f47933f2ed755b62d9312ae72037674f3e93e24af4752faf1a6a9e9b4e1ed88d176150e4f4ebde616fd5f0e8e141f5f61081ed71912d8dc9e6c1f65dab4fa8d0009206223b5"));
 
-        assert_eq!(buffer3, hex!("ea28b7883476f68ed10cf399c6e139cffbbd2a6656a99e3e43480eb53b4f576df5eaecd876b6786b80c7c44dbc2f6553a4ad61b0a025b3e56f02cc63d118e955092dff82f5bc8ed9a305428be48b28692b0fdf523f26c96a9b50388dc1dee6ddc058680116bc2577b610f48882f4d2ef46a3"));
+        assert_eq!(buffer2, hex!("baa993a9d12b536004c7c88e1495bad4ff4e76d0300a107631071ddc547353ad41ab964a399ad38e241539eadbc82348d7c5b2c90261ffd680f973c83b8ab31583466f9a5bedd74009b240aea81c31d79e7fbf65f7ee336c63cc4695d25f779523ab3774ac4bec6f1647f9e3a0f7a044a5b8"));
+
+        assert_eq!(buffer3, hex!("9b30a8c27dcfc009452d9e9513ec4f6c2de03b67f6f93dc68f7bec8a46fb21394c5fc1380718ae60134b0010a18be6af46a7e1cf1b0d0cd3b5d4e8a617bddfbe478f5d0ced2d7415c61f46a4af5519872f3b19ccdced672e6b7e96ac272955ace8a0800f6d21b1f07e701cc9865614005584"));
+        
+        assert_eq!(buffer4, hex!("67d74ed67435de1e63"));
+        assert_eq!(buffer5, hex!("022a199635c83fc3604f804bafdb3f121b888350693d0a0db31ac3e0"));
+        assert_eq!(buffer6, hex!("ce34b79c788723be97da5c3f661420b64131ccbfcfd9e92eec9981a76ce5ddecc203"));
 
         cipher1.decrypt(&mut buffer1);
         cipher1.decrypt(&mut buffer2);
         cipher1.decrypt(&mut buffer3);
+        cipher1.decrypt(&mut buffer4);
+        cipher1.decrypt(&mut buffer5);
+        cipher1.decrypt(&mut buffer6);
 
         assert_eq!(buffer1, msg);
         assert_eq!(buffer2, msg);
         assert_eq!(buffer3, msg);
+        assert_eq!(buffer4, msg1);
+        assert_eq!(buffer5, msg2);
+        assert_eq!(buffer6, msg3);
     }
 
     #[test]
@@ -222,4 +287,5 @@ mod tests {
             assert_eq!(msg, b"hello".repeat(300));
         }
     }
+
 }
