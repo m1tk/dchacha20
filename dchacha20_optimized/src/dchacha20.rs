@@ -14,7 +14,7 @@ pub struct DChaCha20 {
     prev_dig: u8x64,
     /// Temp storage for previous ciphertext
     prev_ciph: Zeroizing<[u8; 64]>,
-    xorshift: XorShift
+    xorshift: XorShiftSIMD
 }
 
 impl DChaCha20 {
@@ -41,7 +41,7 @@ impl DChaCha20 {
             keystream_buffer: u8x64::from_array([0u8; 64]),
             prev_dig: u8x64::from_array([0u8; 64]),
             prev_ciph: Zeroizing::new([0u8; 64]),
-            xorshift: XorShift::new()
+            xorshift: XorShiftSIMD::new()
         }
     }
 
@@ -139,12 +139,12 @@ fn u32_from_le_bytes(slice: &[u8]) -> u32 {
 }
 
 
-struct XorShift {
+struct XorShiftSIMD {
     state: u32x8,
     len: usize
 }
 
-impl XorShift {
+impl XorShiftSIMD {
     pub fn new() -> Self {
         Self {
             state: u32x8::from_array([0; 8]),

@@ -78,7 +78,7 @@ class DChaCha20():
         chunk = b''
         for i in chunked(64, plaintext):
             ciphertext = self.encrypt_inner(i)
-            self.prev_dig = [a ^ b for a, b in zip(XorShift(ciphertext).random_bytes(64) if len(ciphertext) < 64 else ciphertext, self.prev_dig)]
+            self.prev_dig = [a ^ b for a, b in zip(XorShiftSIMD(ciphertext).random_bytes(64) if len(ciphertext) < 64 else ciphertext, self.prev_dig)]
             chunk += ciphertext
         return chunk
 
@@ -87,11 +87,11 @@ class DChaCha20():
         chunk = b''
         for i in chunked(64, ciphertext):
             plaintext = self.encrypt_inner(i)
-            self.prev_dig = [a ^ b for a, b in zip(XorShift(i).random_bytes(64) if len(i) < 64 else i, self.prev_dig)]
+            self.prev_dig = [a ^ b for a, b in zip(XorShiftSIMD(i).random_bytes(64) if len(i) < 64 else i, self.prev_dig)]
             chunk += plaintext
         return chunk
 
-class XorShift:
+class XorShiftSIMD:
     def __init__(self, seed):
         if len(seed) % 4 != 0:
             seed = seed + bytearray(4 - (len(seed) % 4))

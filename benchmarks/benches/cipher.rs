@@ -67,7 +67,6 @@ fn bench_encrypt(c: &mut Criterion, name: &str, size: usize) {
     let mut tchacha20 = dchacha20::ChaCha20::new(&key, &nonce);
     let mut dchacha20 = dchacha20::DChaCha20::new(&key, &nonce);
 
-    /*
     group.bench_function("OpenSSL ChaCha20", |b| {
         b.iter(|| {
             let _r = encrypt(chacha20, &key, Some(&iv), &input).unwrap();
@@ -79,7 +78,6 @@ fn bench_encrypt(c: &mut Criterion, name: &str, size: usize) {
             rchacha20.apply_keystream(&mut input);
         })
     });
-    */
 
     group.bench_function("ChaCha20", |b| {
         b.iter(|| {
