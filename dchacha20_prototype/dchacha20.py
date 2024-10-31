@@ -100,29 +100,24 @@ class XorShiftSIMD:
 
     def gen_rand(self, rand):
         if len(self.state) < 4:
-            s = self.state[0]
-            for b in range(0, len(rand)):
-                self.state[0] ^= self.state[0] << 13
-                self.state[0] ^= self.state[0] >> 17
-                self.state[0] ^= self.state[0] << 5
-                rand[b] = self.state[0] % 256
+            grp = 64
+            byt = 1
+        elif len(self.state) < 8:
+            grp = 16
+            byt = 4
         else:
-            if len(self.state) < 8:
-                grp = 16
-                byt = 4
-            else:
-                grp = 8
-                byt = 8
+            grp = 8
+            byt = 8
 
-            p = 0
-            for i in range(0, grp):
-                for j in range(0, byt):
-                    self.state[j] ^= self.state[j] << 13
-                    self.state[j] ^= self.state[j] >> 17
-                    self.state[j] ^= self.state[j] << 5
-                for b in range(0, byt):
-                    rand[p] = self.state[b] % 256
-                    p += 1
+        p = 0
+        for i in range(0, grp):
+            for j in range(0, byt):
+                self.state[j] ^= self.state[j] << 13
+                self.state[j] ^= self.state[j] >> 17
+                self.state[j] ^= self.state[j] << 5
+            for b in range(0, byt):
+                rand[p] = self.state[b] % 256
+                p += 1
 
     def random_bytes(self, n):
         rand = bytearray(n)
