@@ -1,4 +1,4 @@
-use std::{ops::AddAssign, simd::{u32x16, u8x64}};
+use std::{ops::AddAssign, simd::{u32x16, u32x4, u8x64, ToBytes}};
 
 pub struct ChaCha20 {
     /// This is where the initial state is stored
@@ -34,56 +34,76 @@ impl ChaCha20 {
         }
     }
 
-    fn quarter_round(state: &mut [u32; 16], a: usize, b: usize, c: usize, d: usize) {
-        state[a]  = state[a].wrapping_add(state[b]);
-        state[d] ^= state[a];
-        state[d]  = state[d].rotate_left(16);
-        state[c]  = state[c].wrapping_add(state[d]);
-        state[b] ^= state[c];
-        state[b]  = state[b].rotate_left(12);
-        state[a]  = state[a].wrapping_add(state[b]);
-        state[d] ^= state[a];
-        state[d]  = state[d].rotate_left(8);
-        state[c]  = state[c].wrapping_add(state[d]);
-        state[b] ^= state[c];
-        state[b]  = state[b].rotate_left(7);
+    #[inline(always)]
+    fn quarter_round(a: &mut u32x4, b: &mut u32x4, c: &mut u32x4, d: &mut u32x4) {
+        a.add_assign(*b);
+        *d ^= *a;
+        *d  = (*d << 16) | (*d >> 16);
+        c.add_assign(*d);
+        *b ^= *c;
+        *b  = (*b << 12) | (*b >> 20);
+        a.add_assign(*b);
+        *d ^= *a;
+        *d  = (*d << 8) | (*d >> 24);
+        c.add_assign(*d);
+        *b ^= *c;
+        *b  = (*b << 7) | (*b >> 25);
     }
 
-    fn rounds(state: &mut [u32; 16]) {
+    #[inline(always)]
+    fn rounds(state: &mut u32x16) {
+        let mut a = u32x4::from_slice(&state[0..4]);
+        let mut b = u32x4::from_slice(&state[4..8]);
+        let mut c = u32x4::from_slice(&state[8..12]);
+        let mut d = u32x4::from_slice(&state[12..16]);
         for _ in 0..10 {
             // column round
-            Self::quarter_round(state, 0, 4, 8, 12);
-            Self::quarter_round(state, 1, 5, 9, 13);
-            Self::quarter_round(state, 2, 6, 10, 14);
-            Self::quarter_round(state, 3, 7, 11, 15);
+            Self::quarter_round(&mut a, &mut b, &mut c, &mut d);
 
             // diagonal round
-            Self::quarter_round(state, 0, 5, 10, 15);
-            Self::quarter_round(state, 1, 6, 11, 12);
-            Self::quarter_round(state, 2, 7, 8, 13);
-            Self::quarter_round(state, 3, 4, 9, 14);
+            b = u32x4::from_array([b[1], b[2], b[3], b[0]]);
+            c = u32x4::from_array([c[2], c[3], c[0], c[1]]);
+            d = u32x4::from_array([d[3], d[0], d[1], d[2]]);
+
+            Self::quarter_round(&mut a, &mut b, &mut c, &mut d);
+
+            b = u32x4::from_array([b[3], b[0], b[1], b[2]]);
+            c = u32x4::from_array([c[2], c[3], c[0], c[1]]);
+            d = u32x4::from_array([d[1], d[2], d[3], d[0]]);
         }
+
+        a.copy_to_slice(&mut state[0..4]);
+        b.copy_to_slice(&mut state[4..8]);
+        c.copy_to_slice(&mut state[8..12]);
+        d.copy_to_slice(&mut state[12..16]);
     }
 
+    #[inline(always)]
     fn block_fn(&mut self) {
-        self.state.copy_to_slice(self.keystream.as_mut_array());
-        Self::rounds(self.keystream.as_mut_array());
+        self.keystream = self.state;
+        Self::rounds(&mut self.keystream);
         self.keystream.add_assign(&self.state);
         self.state[12] = self.state[12].wrapping_add(1);
     }
 
+    #[inline(always)]
     fn convert_keystream_to_u8_arr(&mut self) {
-        for i in 0..16 {
-            self.keystream_buffer[4*i..][..4].copy_from_slice(&self.keystream[i].to_le_bytes());
-        }
+        self.keystream_buffer = self.keystream.to_le_bytes();
     }
 
+    #[inline(always)]
     fn apply_keystream(&mut self, buff: &mut [u8]) {
         self.block_fn();
         self.convert_keystream_to_u8_arr();
 
-        for (i, byte) in buff.iter_mut().enumerate() {
-            *byte ^= self.keystream_buffer[i];
+        if buff.len() == 64 {
+            let mut b = u8x64::from_slice(buff);
+            b ^= self.keystream_buffer;
+            b.copy_to_slice(buff);
+        } else {
+            for (i, byte) in buff.iter_mut().enumerate() {
+                *byte ^= self.keystream_buffer[i];
+            }
         }
     }
 
