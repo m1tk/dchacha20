@@ -95,17 +95,43 @@ fn bench_encrypt(c: &mut Criterion, name: &str, size: usize) {
 }
 
 fn bench(c: &mut Criterion) {
+    bench_encrypt(c, "Encrypt 1B", 1);
+    bench_encrypt(c, "Encrypt 32B", 32);
+    bench_encrypt(c, "Encrypt 64B", 64);
     bench_encrypt(c, "Encrypt 100B", 100);
+    bench_encrypt(c, "Encrypt 500B", 500);
+    bench_encrypt(c, "Encrypt 1KB", 1_024);
+    bench_encrypt(c, "Encrypt 3KB", 3_072);
+    bench_encrypt(c, "Encrypt 5KB", 5_120);
+    bench_encrypt(c, "Encrypt 7KB", 7_168);
     bench_encrypt(c, "Encrypt 10KB", 10_240);
     bench_encrypt(c, "Encrypt 1MB", 1_048_576);
+    bench_encrypt(c, "Encrypt 50MB", 52_428_800);
     bench_encrypt(c, "Encrypt 100MB", 104_857_600);
+    bench_encrypt(c, "Encrypt 300MB", 314_572_800);
+    bench_encrypt(c, "Encrypt 600MB", 629_145_600);
     bench_encrypt(c, "Encrypt 1GB", 1_073_741_824);
+    bench_encrypt(c, "Encrypt 3GB", 3_221_225_472);
+    bench_encrypt(c, "Encrypt 5GB", 5_368_709_120);
     
+    bench_decrypt(c, "Decrypt 1B", 1);
+    bench_decrypt(c, "Decrypt 32B", 32);
+    bench_decrypt(c, "Decrypt 64B", 64);
     bench_decrypt(c, "Decrypt 100B", 100);
-    bench_encrypt(c, "Encrypt 10KB", 10_240);
+    bench_decrypt(c, "Decrypt 500B", 500);
+    bench_decrypt(c, "Decrypt 1KB", 1_024);
+    bench_decrypt(c, "Decrypt 3KB", 3_072);
+    bench_decrypt(c, "Decrypt 5KB", 5_120);
+    bench_decrypt(c, "Decrypt 7KB", 7_168);
+    bench_decrypt(c, "Decrypt 10KB", 10_240);
     bench_decrypt(c, "Decrypt 1MB", 1_048_576);
+    bench_decrypt(c, "Decrypt 50MB", 52_428_800);
     bench_decrypt(c, "Decrypt 100MB", 104_857_600);
+    bench_decrypt(c, "Decrypt 300MB", 314_572_800);
+    bench_decrypt(c, "Decrypt 600MB", 629_145_600);
     bench_decrypt(c, "Decrypt 1GB", 1_073_741_824);
+    bench_decrypt(c, "Decrypt 3GB", 3_221_225_472);
+    bench_decrypt(c, "Decrypt 5GB", 5_368_709_120);
 }
 
 criterion_group!(benches, bench);
