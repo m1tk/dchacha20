@@ -96,10 +96,13 @@ fn bench_encrypt(c: &mut Criterion, name: &str, size: usize) {
 
 fn bench(c: &mut Criterion) {
     bench_encrypt(c, "Encrypt 1B", 1);
+    bench_encrypt(c, "Encrypt 16B", 16);
     bench_encrypt(c, "Encrypt 32B", 32);
     bench_encrypt(c, "Encrypt 64B", 64);
     bench_encrypt(c, "Encrypt 100B", 100);
+    bench_encrypt(c, "Encrypt 300B", 300);
     bench_encrypt(c, "Encrypt 500B", 500);
+    bench_encrypt(c, "Encrypt 700B", 700);
     bench_encrypt(c, "Encrypt 1KB", 1_024);
     bench_encrypt(c, "Encrypt 3KB", 3_072);
     bench_encrypt(c, "Encrypt 5KB", 5_120);
@@ -115,10 +118,13 @@ fn bench(c: &mut Criterion) {
     bench_encrypt(c, "Encrypt 5GB", 5_368_709_120);
     
     bench_decrypt(c, "Decrypt 1B", 1);
+    bench_decrypt(c, "Decrypt 16B", 16);
     bench_decrypt(c, "Decrypt 32B", 32);
     bench_decrypt(c, "Decrypt 64B", 64);
     bench_decrypt(c, "Decrypt 100B", 100);
+    bench_decrypt(c, "Decrypt 300B", 300);
     bench_decrypt(c, "Decrypt 500B", 500);
+    bench_decrypt(c, "Decrypt 700B", 700);
     bench_decrypt(c, "Decrypt 1KB", 1_024);
     bench_decrypt(c, "Decrypt 3KB", 3_072);
     bench_decrypt(c, "Decrypt 5KB", 5_120);
