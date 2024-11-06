@@ -1,0 +1,1403 @@
+    Finished `bench` profile [optimized] target(s) in 0.05s
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+Gnuplot not found, using plotters backend
+Benchmarking Encrypt 1B/OpenSSL ChaCha20
+Benchmarking Encrypt 1B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0019 s (10.0M iterations)
+Benchmarking Encrypt 1B/OpenSSL ChaCha20: Analyzing
+Encrypt 1B/OpenSSL ChaCha20
+                        time:   [499.48 ns 499.71 ns 500.07 ns]
+                        thrpt:  [1.9071 MiB/s 1.9085 MiB/s 1.9093 MiB/s]
+Benchmarking Encrypt 1B/RustCrypto ChaCha20
+Benchmarking Encrypt 1B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0000 s (1.5B iterations)
+Benchmarking Encrypt 1B/RustCrypto ChaCha20: Analyzing
+Encrypt 1B/RustCrypto ChaCha20
+                        time:   [3.3195 ns 3.3267 ns 3.3350 ns]
+                        thrpt:  [285.96 MiB/s 286.67 MiB/s 287.29 MiB/s]
+Benchmarking Encrypt 1B/ChaCha20
+Benchmarking Encrypt 1B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1B/ChaCha20: Collecting 100 samples in estimated 5.0002 s (53M iterations)
+Benchmarking Encrypt 1B/ChaCha20: Analyzing
+Encrypt 1B/Chacha20
+					     time:   [93.057 ns 93.315 ns 93.578 ns]
+                        thrpt:  [10.191 MiB/s 10.220 MiB/s 10.248 MiB/s]
+Benchmarking Encrypt 1B/DChaCha20
+Benchmarking Encrypt 1B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1B/DChaCha20: Collecting 100 samples in estimated 5.0000 s (25M iterations)
+Benchmarking Encrypt 1B/DChaCha20: Analyzing
+Encrypt 1B/DChacha20
+					    time:   [199.10 ns 199.65 ns 200.19 ns]
+                        thrpt:  [4.7639 MiB/s 4.7767 MiB/s 4.7900 MiB/s]
+
+Benchmarking Encrypt 16B/OpenSSL ChaCha20
+Benchmarking Encrypt 16B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 16B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0002 s (9.9M iterations)
+Benchmarking Encrypt 16B/OpenSSL ChaCha20: Analyzing
+Encrypt 16B/OpenSSL ChaCha20
+                        time:   [506.57 ns 507.18 ns 507.97 ns]
+                        thrpt:  [30.039 MiB/s 30.085 MiB/s 30.122 MiB/s]
+Benchmarking Encrypt 16B/RustCrypto ChaCha20
+Benchmarking Encrypt 16B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 16B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0001 s (198M iterations)
+Benchmarking Encrypt 16B/RustCrypto ChaCha20: Analyzing
+Encrypt 16B/RustCrypto ChaCha20
+                        time:   [25.752 ns 25.820 ns 25.894 ns]
+                        thrpt:  [589.29 MiB/s 590.98 MiB/s 592.52 MiB/s]
+Benchmarking Encrypt 16B/ChaCha20
+Benchmarking Encrypt 16B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 16B/ChaCha20: Collecting 100 samples in estimated 5.0001 s (54M iterations)
+Benchmarking Encrypt 16B/ChaCha20: Analyzing
+Encrypt 16B/Chacha20
+					    time:   [91.902 ns 91.919 ns 91.938 ns]
+                        thrpt:  [165.97 MiB/s 166.00 MiB/s 166.03 MiB/s]
+Benchmarking Encrypt 16B/DChaCha20
+Benchmarking Encrypt 16B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 16B/DChaCha20: Collecting 100 samples in estimated 5.0007 s (36M iterations)
+Benchmarking Encrypt 16B/DChaCha20: Analyzing
+Encrypt 16B/DChacha20
+					   time:   [137.95 ns 138.28 ns 138.59 ns]
+                        thrpt:  [110.10 MiB/s 110.34 MiB/s 110.61 MiB/s]
+
+Benchmarking Encrypt 32B/OpenSSL ChaCha20
+Benchmarking Encrypt 32B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 32B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0024 s (9.7M iterations)
+Benchmarking Encrypt 32B/OpenSSL ChaCha20: Analyzing
+Encrypt 32B/OpenSSL ChaCha20
+                        time:   [513.86 ns 513.99 ns 514.12 ns]
+                        thrpt:  [59.359 MiB/s 59.374 MiB/s 59.389 MiB/s]
+Benchmarking Encrypt 32B/RustCrypto ChaCha20
+Benchmarking Encrypt 32B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 32B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0001 s (102M iterations)
+Benchmarking Encrypt 32B/RustCrypto ChaCha20: Analyzing
+Encrypt 32B/RustCrypto ChaCha20
+                        time:   [49.264 ns 49.331 ns 49.417 ns]
+                        thrpt:  [617.55 MiB/s 618.63 MiB/s 619.48 MiB/s]
+Benchmarking Encrypt 32B/ChaCha20
+Benchmarking Encrypt 32B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 32B/ChaCha20: Collecting 100 samples in estimated 5.0004 s (50M iterations)
+Benchmarking Encrypt 32B/ChaCha20: Analyzing
+Encrypt 32B/Chacha20
+					    time:   [98.133 ns 98.158 ns 98.186 ns]
+                        thrpt:  [310.82 MiB/s 310.90 MiB/s 310.98 MiB/s]
+Benchmarking Encrypt 32B/DChaCha20
+Benchmarking Encrypt 32B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 32B/DChaCha20: Collecting 100 samples in estimated 5.0002 s (35M iterations)
+Benchmarking Encrypt 32B/DChaCha20: Analyzing
+Encrypt 32B/DChacha20
+					   time:   [142.32 ns 142.41 ns 142.52 ns]
+                        thrpt:  [214.13 MiB/s 214.29 MiB/s 214.42 MiB/s]
+
+Benchmarking Encrypt 64B/OpenSSL ChaCha20
+Benchmarking Encrypt 64B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 64B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0010 s (10.0M iterations)
+Benchmarking Encrypt 64B/OpenSSL ChaCha20: Analyzing
+Encrypt 64B/OpenSSL ChaCha20
+                        time:   [502.76 ns 503.82 ns 505.01 ns]
+                        thrpt:  [120.86 MiB/s 121.14 MiB/s 121.40 MiB/s]
+Benchmarking Encrypt 64B/RustCrypto ChaCha20
+Benchmarking Encrypt 64B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 64B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0002 s (60M iterations)
+Benchmarking Encrypt 64B/RustCrypto ChaCha20: Analyzing
+Encrypt 64B/RustCrypto ChaCha20
+                        time:   [83.346 ns 83.366 ns 83.391 ns]
+                        thrpt:  [731.92 MiB/s 732.13 MiB/s 732.31 MiB/s]
+Benchmarking Encrypt 64B/ChaCha20
+Benchmarking Encrypt 64B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 64B/ChaCha20: Collecting 100 samples in estimated 5.0001 s (54M iterations)
+Benchmarking Encrypt 64B/ChaCha20: Analyzing
+Encrypt 64B/Chacha20
+					    time:   [92.030 ns 92.054 ns 92.081 ns]
+                        thrpt:  [662.84 MiB/s 663.04 MiB/s 663.21 MiB/s]
+Benchmarking Encrypt 64B/DChaCha20
+Benchmarking Encrypt 64B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 64B/DChaCha20: Collecting 100 samples in estimated 5.0002 s (53M iterations)
+Benchmarking Encrypt 64B/DChaCha20: Analyzing
+Encrypt 64B/DChacha20
+					   time:   [91.657 ns 91.684 ns 91.716 ns]
+                        thrpt:  [665.48 MiB/s 665.71 MiB/s 665.91 MiB/s]
+
+Benchmarking Encrypt 100B/OpenSSL ChaCha20
+Benchmarking Encrypt 100B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 100B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0021 s (8.2M iterations)
+Benchmarking Encrypt 100B/OpenSSL ChaCha20: Analyzing
+Encrypt 100B/OpenSSL ChaCha20
+                        time:   [612.31 ns 612.33 ns 612.34 ns]
+                        thrpt:  [155.74 MiB/s 155.75 MiB/s 155.75 MiB/s]
+Benchmarking Encrypt 100B/RustCrypto ChaCha20
+Benchmarking Encrypt 100B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 100B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0000 s (37M iterations)
+Benchmarking Encrypt 100B/RustCrypto ChaCha20: Analyzing
+Encrypt 100B/RustCrypto ChaCha20
+                        time:   [136.38 ns 136.47 ns 136.53 ns]
+                        thrpt:  [698.48 MiB/s 698.82 MiB/s 699.25 MiB/s]
+Benchmarking Encrypt 100B/ChaCha20
+Benchmarking Encrypt 100B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 100B/ChaCha20: Collecting 100 samples in estimated 5.0009 s (27M iterations)
+Benchmarking Encrypt 100B/ChaCha20: Analyzing
+Encrypt 100B/Chacha20
+					   time:   [186.91 ns 187.23 ns 187.48 ns]
+                        thrpt:  [508.68 MiB/s 509.36 MiB/s 510.24 MiB/s]
+Benchmarking Encrypt 100B/DChaCha20
+Benchmarking Encrypt 100B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 100B/DChaCha20: Collecting 100 samples in estimated 5.0005 s (23M iterations)
+Benchmarking Encrypt 100B/DChaCha20: Analyzing
+Encrypt 100B/DChacha20
+					  time:   [220.24 ns 220.27 ns 220.30 ns]
+                        thrpt:  [432.90 MiB/s 432.97 MiB/s 433.02 MiB/s]
+
+Benchmarking Encrypt 300B/OpenSSL ChaCha20
+Benchmarking Encrypt 300B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 300B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0020 s (7.1M iterations)
+Benchmarking Encrypt 300B/OpenSSL ChaCha20: Analyzing
+Encrypt 300B/OpenSSL ChaCha20
+                        time:   [698.43 ns 698.62 ns 698.83 ns]
+                        thrpt:  [409.40 MiB/s 409.52 MiB/s 409.64 MiB/s]
+Benchmarking Encrypt 300B/RustCrypto ChaCha20
+Benchmarking Encrypt 300B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 300B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0001 s (23M iterations)
+Benchmarking Encrypt 300B/RustCrypto ChaCha20: Analyzing
+Encrypt 300B/RustCrypto ChaCha20
+                        time:   [221.67 ns 222.13 ns 222.55 ns]
+                        thrpt:  [1.2554 GiB/s 1.2578 GiB/s 1.2604 GiB/s]
+Benchmarking Encrypt 300B/ChaCha20
+Benchmarking Encrypt 300B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 300B/ChaCha20: Collecting 100 samples in estimated 5.0015 s (11M iterations)
+Benchmarking Encrypt 300B/ChaCha20: Analyzing
+Encrypt 300B/Chacha20
+					   time:   [462.68 ns 463.51 ns 464.55 ns]
+                        thrpt:  [615.87 MiB/s 617.25 MiB/s 618.36 MiB/s]
+Benchmarking Encrypt 300B/DChaCha20
+Benchmarking Encrypt 300B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 300B/DChaCha20: Collecting 100 samples in estimated 5.0024 s (10.0M iterations)
+Benchmarking Encrypt 300B/DChaCha20: Analyzing
+Encrypt 300B/DChacha20
+					  time:   [503.23 ns 504.79 ns 506.24 ns]
+                        thrpt:  [565.15 MiB/s 566.77 MiB/s 568.53 MiB/s]
+
+Benchmarking Encrypt 500B/OpenSSL ChaCha20
+Benchmarking Encrypt 500B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 500B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0004 s (7.1M iterations)
+Benchmarking Encrypt 500B/OpenSSL ChaCha20: Analyzing
+Encrypt 500B/OpenSSL ChaCha20
+                        time:   [702.98 ns 703.14 ns 703.33 ns]
+                        thrpt:  [677.97 MiB/s 678.15 MiB/s 678.31 MiB/s]
+Benchmarking Encrypt 500B/RustCrypto ChaCha20
+Benchmarking Encrypt 500B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 500B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0002 s (13M iterations)
+Benchmarking Encrypt 500B/RustCrypto ChaCha20: Analyzing
+Encrypt 500B/RustCrypto ChaCha20
+                        time:   [400.10 ns 401.20 ns 402.31 ns]
+                        thrpt:  [1.1575 GiB/s 1.1607 GiB/s 1.1639 GiB/s]
+Benchmarking Encrypt 500B/ChaCha20
+Benchmarking Encrypt 500B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 500B/ChaCha20: Collecting 100 samples in estimated 5.0013 s (6.7M iterations)
+Benchmarking Encrypt 500B/ChaCha20: Analyzing
+Encrypt 500B/Chacha20
+					   time:   [740.89 ns 741.96 ns 743.24 ns]
+                        thrpt:  [641.57 MiB/s 642.68 MiB/s 643.60 MiB/s]
+Benchmarking Encrypt 500B/DChaCha20
+Benchmarking Encrypt 500B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 500B/DChaCha20: Collecting 100 samples in estimated 5.0021 s (6.3M iterations)
+Benchmarking Encrypt 500B/DChaCha20: Analyzing
+Encrypt 500B/DChacha20
+					  time:   [782.64 ns 783.59 ns 784.76 ns]
+                        thrpt:  [607.62 MiB/s 608.53 MiB/s 609.27 MiB/s]
+
+Benchmarking Encrypt 700B/OpenSSL ChaCha20
+Benchmarking Encrypt 700B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 700B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0013 s (5.9M iterations)
+Benchmarking Encrypt 700B/OpenSSL ChaCha20: Analyzing
+Encrypt 700B/OpenSSL ChaCha20
+                        time:   [854.48 ns 856.94 ns 859.15 ns]
+                        thrpt:  [777.01 MiB/s 779.02 MiB/s 781.26 MiB/s]
+Benchmarking Encrypt 700B/RustCrypto ChaCha20
+Benchmarking Encrypt 700B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 700B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0006 s (11M iterations)
+Benchmarking Encrypt 700B/RustCrypto ChaCha20: Analyzing
+Encrypt 700B/RustCrypto ChaCha20
+                        time:   [435.36 ns 435.87 ns 436.52 ns]
+                        thrpt:  [1.4935 GiB/s 1.4957 GiB/s 1.4974 GiB/s]
+Benchmarking Encrypt 700B/ChaCha20
+Benchmarking Encrypt 700B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 700B/ChaCha20: Collecting 100 samples in estimated 5.0002 s (4.9M iterations)
+Benchmarking Encrypt 700B/ChaCha20: Analyzing
+Encrypt 700B/Chacha20
+					   time:   [1.0239 µs 1.0242 µs 1.0244 µs]
+                        thrpt:  [651.64 MiB/s 651.81 MiB/s 651.97 MiB/s]
+Benchmarking Encrypt 700B/DChaCha20
+Benchmarking Encrypt 700B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 700B/DChaCha20: Collecting 100 samples in estimated 5.0012 s (4.6M iterations)
+Benchmarking Encrypt 700B/DChaCha20: Analyzing
+Encrypt 700B/DChacha20
+					  time:   [1.0666 µs 1.0678 µs 1.0695 µs]
+                        thrpt:  [624.19 MiB/s 625.16 MiB/s 625.91 MiB/s]
+
+Benchmarking Encrypt 1KB/OpenSSL ChaCha20
+Benchmarking Encrypt 1KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0009 s (6.7M iterations)
+Benchmarking Encrypt 1KB/OpenSSL ChaCha20: Analyzing
+Encrypt 1KB/OpenSSL ChaCha20
+                        time:   [746.66 ns 747.30 ns 748.12 ns]
+                        thrpt:  [1.2748 GiB/s 1.2762 GiB/s 1.2773 GiB/s]
+Benchmarking Encrypt 1KB/RustCrypto ChaCha20
+Benchmarking Encrypt 1KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0019 s (12M iterations)
+Benchmarking Encrypt 1KB/RustCrypto ChaCha20: Analyzing
+Encrypt 1KB/RustCrypto ChaCha20
+                        time:   [416.61 ns 416.96 ns 417.39 ns]
+                        thrpt:  [2.2849 GiB/s 2.2872 GiB/s 2.2891 GiB/s]
+Benchmarking Encrypt 1KB/ChaCha20
+Benchmarking Encrypt 1KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1KB/ChaCha20: Collecting 100 samples in estimated 5.0020 s (3.3M iterations)
+Benchmarking Encrypt 1KB/ChaCha20: Analyzing
+Encrypt 1KB/Chacha20
+					    time:   [1.4787 µs 1.4811 µs 1.4840 µs]
+                        thrpt:  [658.05 MiB/s 659.37 MiB/s 660.40 MiB/s]
+Benchmarking Encrypt 1KB/DChaCha20
+Benchmarking Encrypt 1KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1KB/DChaCha20: Collecting 100 samples in estimated 5.0052 s (3.4M iterations)
+Benchmarking Encrypt 1KB/DChaCha20: Analyzing
+Encrypt 1KB/DChacha20
+					   time:   [1.4801 µs 1.4837 µs 1.4877 µs]
+                        thrpt:  [656.42 MiB/s 658.22 MiB/s 659.82 MiB/s]
+
+Benchmarking Encrypt 3KB/OpenSSL ChaCha20
+Benchmarking Encrypt 3KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 3KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0046 s (3.7M iterations)
+Benchmarking Encrypt 3KB/OpenSSL ChaCha20: Analyzing
+Encrypt 3KB/OpenSSL ChaCha20
+                        time:   [1.3576 µs 1.3613 µs 1.3652 µs]
+                        thrpt:  [2.0957 GiB/s 2.1018 GiB/s 2.1074 GiB/s]
+Benchmarking Encrypt 3KB/RustCrypto ChaCha20
+Benchmarking Encrypt 3KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 3KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0028 s (4.0M iterations)
+Benchmarking Encrypt 3KB/RustCrypto ChaCha20: Analyzing
+Encrypt 3KB/RustCrypto ChaCha20
+                        time:   [1.2345 µs 1.2383 µs 1.2419 µs]
+                        thrpt:  [2.3038 GiB/s 2.3104 GiB/s 2.3176 GiB/s]
+Benchmarking Encrypt 3KB/ChaCha20
+Benchmarking Encrypt 3KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 3KB/ChaCha20: Collecting 100 samples in estimated 5.0121 s (1.1M iterations)
+Benchmarking Encrypt 3KB/ChaCha20: Analyzing
+Encrypt 3KB/Chacha20
+					    time:   [4.5025 µs 4.5135 µs 4.5237 µs]
+                        thrpt:  [647.64 MiB/s 649.10 MiB/s 650.68 MiB/s]
+Benchmarking Encrypt 3KB/DChaCha20
+Benchmarking Encrypt 3KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 3KB/DChaCha20: Collecting 100 samples in estimated 5.0124 s (1.1M iterations)
+Benchmarking Encrypt 3KB/DChaCha20: Analyzing
+Encrypt 3KB/DChacha20
+					   time:   [4.4202 µs 4.4211 µs 4.4221 µs]
+                        thrpt:  [662.51 MiB/s 662.66 MiB/s 662.80 MiB/s]
+
+Benchmarking Encrypt 5KB/OpenSSL ChaCha20
+Benchmarking Encrypt 5KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 5KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0027 s (2.5M iterations)
+Benchmarking Encrypt 5KB/OpenSSL ChaCha20: Analyzing
+Encrypt 5KB/OpenSSL ChaCha20
+                        time:   [1.9567 µs 1.9606 µs 1.9652 µs]
+                        thrpt:  [2.4264 GiB/s 2.4321 GiB/s 2.4370 GiB/s]
+Benchmarking Encrypt 5KB/RustCrypto ChaCha20
+Benchmarking Encrypt 5KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 5KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0085 s (2.5M iterations)
+Benchmarking Encrypt 5KB/RustCrypto ChaCha20: Analyzing
+Encrypt 5KB/RustCrypto ChaCha20
+                        time:   [2.0359 µs 2.0364 µs 2.0370 µs]
+                        thrpt:  [2.3408 GiB/s 2.3415 GiB/s 2.3421 GiB/s]
+Benchmarking Encrypt 5KB/ChaCha20
+Benchmarking Encrypt 5KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 5KB/ChaCha20: Collecting 100 samples in estimated 5.0290 s (677k iterations)
+Benchmarking Encrypt 5KB/ChaCha20: Analyzing
+Encrypt 5KB/Chacha20
+					    time:   [7.4377 µs 7.4585 µs 7.4796 µs]
+                        thrpt:  [652.82 MiB/s 654.67 MiB/s 656.49 MiB/s]
+Benchmarking Encrypt 5KB/DChaCha20
+Benchmarking Encrypt 5KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 5KB/DChaCha20: Collecting 100 samples in estimated 5.0372 s (682k iterations)
+Benchmarking Encrypt 5KB/DChaCha20: Analyzing
+Encrypt 5KB/DChacha20
+					   time:   [7.4134 µs 7.4333 µs 7.4547 µs]
+                        thrpt:  [655.00 MiB/s 656.89 MiB/s 658.65 MiB/s]
+
+Benchmarking Encrypt 7KB/OpenSSL ChaCha20
+Benchmarking Encrypt 7KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 7KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0018 s (1.9M iterations)
+Benchmarking Encrypt 7KB/OpenSSL ChaCha20: Analyzing
+Encrypt 7KB/OpenSSL ChaCha20
+                        time:   [2.5532 µs 2.5608 µs 2.5683 µs]
+                        thrpt:  [2.5993 GiB/s 2.6069 GiB/s 2.6147 GiB/s]
+Benchmarking Encrypt 7KB/RustCrypto ChaCha20
+Benchmarking Encrypt 7KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 7KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0096 s (1.7M iterations)
+Benchmarking Encrypt 7KB/RustCrypto ChaCha20: Analyzing
+Encrypt 7KB/RustCrypto ChaCha20
+                        time:   [2.8429 µs 2.8435 µs 2.8442 µs]
+                        thrpt:  [2.3471 GiB/s 2.3477 GiB/s 2.3482 GiB/s]
+Benchmarking Encrypt 7KB/ChaCha20
+Benchmarking Encrypt 7KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 7KB/ChaCha20: Collecting 100 samples in estimated 5.0488 s (485k iterations)
+Benchmarking Encrypt 7KB/ChaCha20: Analyzing
+Encrypt 7KB/Chacha20
+					    time:   [10.359 µs 10.388 µs 10.418 µs]
+                        thrpt:  [656.19 MiB/s 658.04 MiB/s 659.91 MiB/s]
+Benchmarking Encrypt 7KB/DChaCha20
+Benchmarking Encrypt 7KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 7KB/DChaCha20: Collecting 100 samples in estimated 5.0237 s (485k iterations)
+Benchmarking Encrypt 7KB/DChaCha20: Analyzing
+Encrypt 7KB/DChacha20
+					   time:   [10.444 µs 10.470 µs 10.492 µs]
+                        thrpt:  [651.52 MiB/s 652.92 MiB/s 654.54 MiB/s]
+
+Benchmarking Encrypt 10KB/OpenSSL ChaCha20
+Benchmarking Encrypt 10KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 10KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0170 s (1.4M iterations)
+Benchmarking Encrypt 10KB/OpenSSL ChaCha20: Analyzing
+Encrypt 10KB/OpenSSL ChaCha20
+                        time:   [3.4448 µs 3.4462 µs 3.4480 µs]
+                        thrpt:  [2.7659 GiB/s 2.7673 GiB/s 2.7685 GiB/s]
+Benchmarking Encrypt 10KB/RustCrypto ChaCha20
+Benchmarking Encrypt 10KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 10KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0189 s (1.2M iterations)
+Benchmarking Encrypt 10KB/RustCrypto ChaCha20: Analyzing
+Encrypt 10KB/RustCrypto ChaCha20
+                        time:   [4.1026 µs 4.1135 µs 4.1232 µs]
+                        thrpt:  [2.3129 GiB/s 2.3184 GiB/s 2.3246 GiB/s]
+Benchmarking Encrypt 10KB/ChaCha20
+Benchmarking Encrypt 10KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 10KB/ChaCha20: Collecting 100 samples in estimated 5.0318 s (338k iterations)
+Benchmarking Encrypt 10KB/ChaCha20: Analyzing
+Encrypt 10KB/Chacha20
+					   time:   [14.814 µs 14.845 µs 14.880 µs]
+                        thrpt:  [656.28 MiB/s 657.84 MiB/s 659.20 MiB/s]
+Benchmarking Encrypt 10KB/DChaCha20
+Benchmarking Encrypt 10KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 10KB/DChaCha20: Collecting 100 samples in estimated 5.0415 s (338k iterations)
+Benchmarking Encrypt 10KB/DChaCha20: Analyzing
+Encrypt 10KB/DChacha20
+					  time:   [14.799 µs 14.826 µs 14.859 µs]
+                        thrpt:  [657.21 MiB/s 658.70 MiB/s 659.89 MiB/s]
+
+Benchmarking Encrypt 1MB/OpenSSL ChaCha20
+Benchmarking Encrypt 1MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 6.5105 s (20k iterations)
+Benchmarking Encrypt 1MB/OpenSSL ChaCha20: Analyzing
+Encrypt 1MB/OpenSSL ChaCha20
+                        time:   [320.15 µs 321.02 µs 321.90 µs]
+                        thrpt:  [3.0338 GiB/s 3.0420 GiB/s 3.0503 GiB/s]
+Benchmarking Encrypt 1MB/RustCrypto ChaCha20
+Benchmarking Encrypt 1MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 1MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 6.3048 s (15k iterations)
+Benchmarking Encrypt 1MB/RustCrypto ChaCha20: Analyzing
+Encrypt 1MB/RustCrypto ChaCha20
+                        time:   [415.17 µs 415.28 µs 415.40 µs]
+                        thrpt:  [2.3509 GiB/s 2.3516 GiB/s 2.3522 GiB/s]
+Benchmarking Encrypt 1MB/ChaCha20
+Benchmarking Encrypt 1MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.7s, enable flat sampling, or reduce sample count to 50.
+Benchmarking Encrypt 1MB/ChaCha20: Collecting 100 samples in estimated 7.7228 s (5050 iterations)
+Benchmarking Encrypt 1MB/ChaCha20: Analyzing
+Encrypt 1MB/Chacha20
+					    time:   [1.5211 ms 1.5238 ms 1.5271 ms]
+                        thrpt:  [654.83 MiB/s 656.25 MiB/s 657.44 MiB/s]
+Benchmarking Encrypt 1MB/DChaCha20
+Benchmarking Encrypt 1MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.6s, enable flat sampling, or reduce sample count to 50.
+Benchmarking Encrypt 1MB/DChaCha20: Collecting 100 samples in estimated 7.6404 s (5050 iterations)
+Benchmarking Encrypt 1MB/DChaCha20: Analyzing
+Encrypt 1MB/DChacha20
+					   time:   [1.5100 ms 1.5105 ms 1.5111 ms]
+                        thrpt:  [661.78 MiB/s 662.03 MiB/s 662.23 MiB/s]
+
+Benchmarking Encrypt 50MB/OpenSSL ChaCha20
+Benchmarking Encrypt 50MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 50MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 6.0710 s (300 iterations)
+Benchmarking Encrypt 50MB/OpenSSL ChaCha20: Analyzing
+Encrypt 50MB/OpenSSL ChaCha20
+                        time:   [20.196 ms 20.219 ms 20.240 ms]
+                        thrpt:  [2.4124 GiB/s 2.4150 GiB/s 2.4177 GiB/s]
+Benchmarking Encrypt 50MB/RustCrypto ChaCha20
+Benchmarking Encrypt 50MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 50MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 6.3785 s (300 iterations)
+Benchmarking Encrypt 50MB/RustCrypto ChaCha20: Analyzing
+Encrypt 50MB/RustCrypto ChaCha20
+                        time:   [20.931 ms 20.968 ms 21.008 ms]
+                        thrpt:  [2.3242 GiB/s 2.3287 GiB/s 2.3328 GiB/s]
+Benchmarking Encrypt 50MB/ChaCha20
+Benchmarking Encrypt 50MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.6s, or reduce sample count to 60.
+Benchmarking Encrypt 50MB/ChaCha20: Collecting 100 samples in estimated 7.5830 s (100 iterations)
+Benchmarking Encrypt 50MB/ChaCha20: Analyzing
+Encrypt 50MB/Chacha20
+					   time:   [75.861 ms 75.938 ms 76.029 ms]
+                        thrpt:  [657.64 MiB/s 658.43 MiB/s 659.10 MiB/s]
+Benchmarking Encrypt 50MB/DChaCha20
+Benchmarking Encrypt 50MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.7s, or reduce sample count to 60.
+Benchmarking Encrypt 50MB/DChaCha20: Collecting 100 samples in estimated 7.6860 s (100 iterations)
+Benchmarking Encrypt 50MB/DChaCha20: Analyzing
+Encrypt 50MB/DChacha20
+					  time:   [75.984 ms 76.134 ms 76.290 ms]
+                        thrpt:  [655.39 MiB/s 656.74 MiB/s 658.03 MiB/s]
+
+Benchmarking Encrypt 100MB/OpenSSL ChaCha20
+Benchmarking Encrypt 100MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 100MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 7.8842 s (200 iterations)
+Benchmarking Encrypt 100MB/OpenSSL ChaCha20: Analyzing
+Encrypt 100MB/OpenSSL ChaCha20
+                        time:   [39.609 ms 39.669 ms 39.727 ms]
+                        thrpt:  [2.4582 GiB/s 2.4618 GiB/s 2.4655 GiB/s]
+Benchmarking Encrypt 100MB/RustCrypto ChaCha20
+Benchmarking Encrypt 100MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Encrypt 100MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 8.4514 s (200 iterations)
+Benchmarking Encrypt 100MB/RustCrypto ChaCha20: Analyzing
+Encrypt 100MB/RustCrypto ChaCha20
+                        time:   [42.234 ms 42.333 ms 42.432 ms]
+                        thrpt:  [2.3015 GiB/s 2.3069 GiB/s 2.3123 GiB/s]
+Benchmarking Encrypt 100MB/ChaCha20
+Benchmarking Encrypt 100MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 15.4s, or reduce sample count to 30.
+Benchmarking Encrypt 100MB/ChaCha20: Collecting 100 samples in estimated 15.408 s (100 iterations)
+Benchmarking Encrypt 100MB/ChaCha20: Analyzing
+Encrypt 100MB/Chacha20
+					  time:   [152.30 ms 152.58 ms 152.88 ms]
+                        thrpt:  [654.11 MiB/s 655.38 MiB/s 656.60 MiB/s]
+Benchmarking Encrypt 100MB/DChaCha20
+Benchmarking Encrypt 100MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 15.3s, or reduce sample count to 30.
+Benchmarking Encrypt 100MB/DChaCha20: Collecting 100 samples in estimated 15.316 s (100 iterations)
+Benchmarking Encrypt 100MB/DChaCha20: Analyzing
+Encrypt 100MB/DChacha20
+					 time:   [152.57 ms 152.88 ms 153.18 ms]
+                        thrpt:  [652.84 MiB/s 654.12 MiB/s 655.43 MiB/s]
+
+Benchmarking Encrypt 200MB/OpenSSL ChaCha20
+Benchmarking Encrypt 200MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.8s, or reduce sample count to 60.
+Benchmarking Encrypt 200MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 7.8006 s (100 iterations)
+Benchmarking Encrypt 200MB/OpenSSL ChaCha20: Analyzing
+Encrypt 200MB/OpenSSL ChaCha20
+                        time:   [77.995 ms 78.118 ms 78.246 ms]
+                        thrpt:  [2.4961 GiB/s 2.5002 GiB/s 2.5042 GiB/s]
+Benchmarking Encrypt 200MB/RustCrypto ChaCha20
+Benchmarking Encrypt 200MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 8.6s, or reduce sample count to 50.
+Benchmarking Encrypt 200MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 8.5962 s (100 iterations)
+Benchmarking Encrypt 200MB/RustCrypto ChaCha20: Analyzing
+Encrypt 200MB/RustCrypto ChaCha20
+                        time:   [84.518 ms 84.715 ms 84.907 ms]
+                        thrpt:  [2.3003 GiB/s 2.3055 GiB/s 2.3109 GiB/s]
+Benchmarking Encrypt 200MB/ChaCha20
+Benchmarking Encrypt 200MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 30.4s, or reduce sample count to 10.
+Benchmarking Encrypt 200MB/ChaCha20: Collecting 100 samples in estimated 30.441 s (100 iterations)
+Benchmarking Encrypt 200MB/ChaCha20: Analyzing
+Encrypt 200MB/Chacha20
+					  time:   [304.97 ms 305.55 ms 306.14 ms]
+                        thrpt:  [653.29 MiB/s 654.55 MiB/s 655.79 MiB/s]
+Benchmarking Encrypt 200MB/DChaCha20
+Benchmarking Encrypt 200MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 30.9s, or reduce sample count to 10.
+Benchmarking Encrypt 200MB/DChaCha20: Collecting 100 samples in estimated 30.855 s (100 iterations)
+Benchmarking Encrypt 200MB/DChaCha20: Analyzing
+Encrypt 200MB/DChacha20
+					 time:   [304.27 ms 304.87 ms 305.48 ms]
+                        thrpt:  [654.70 MiB/s 656.01 MiB/s 657.30 MiB/s]
+
+Benchmarking Encrypt 300MB/OpenSSL ChaCha20
+Benchmarking Encrypt 300MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 11.7s, or reduce sample count to 40.
+Benchmarking Encrypt 300MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 11.717 s (100 iterations)
+Benchmarking Encrypt 300MB/OpenSSL ChaCha20: Analyzing
+Encrypt 300MB/OpenSSL ChaCha20
+                        time:   [117.03 ms 117.23 ms 117.44 ms]
+                        thrpt:  [2.4947 GiB/s 2.4990 GiB/s 2.5033 GiB/s]
+Benchmarking Encrypt 300MB/RustCrypto ChaCha20
+Benchmarking Encrypt 300MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 13.0s, or reduce sample count to 30.
+Benchmarking Encrypt 300MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 13.011 s (100 iterations)
+Benchmarking Encrypt 300MB/RustCrypto ChaCha20: Analyzing
+Encrypt 300MB/RustCrypto ChaCha20
+                        time:   [126.55 ms 126.84 ms 127.13 ms]
+                        thrpt:  [2.3044 GiB/s 2.3097 GiB/s 2.3151 GiB/s]
+Benchmarking Encrypt 300MB/ChaCha20
+Benchmarking Encrypt 300MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 45.9s, or reduce sample count to 10.
+Benchmarking Encrypt 300MB/ChaCha20: Collecting 100 samples in estimated 45.933 s (100 iterations)
+Benchmarking Encrypt 300MB/ChaCha20: Analyzing
+Encrypt 300MB/Chacha20
+					  time:   [459.91 ms 460.79 ms 461.65 ms]
+                        thrpt:  [649.84 MiB/s 651.05 MiB/s 652.30 MiB/s]
+Benchmarking Encrypt 300MB/DChaCha20
+Benchmarking Encrypt 300MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 45.5s, or reduce sample count to 10.
+Benchmarking Encrypt 300MB/DChaCha20: Collecting 100 samples in estimated 45.478 s (100 iterations)
+Benchmarking Encrypt 300MB/DChaCha20: Analyzing
+Encrypt 300MB/DChacha20
+					 time:   [455.28 ms 456.06 ms 456.87 ms]
+                        thrpt:  [656.64 MiB/s 657.80 MiB/s 658.93 MiB/s]
+
+Benchmarking Encrypt 400MB/OpenSSL ChaCha20
+Benchmarking Encrypt 400MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 15.6s, or reduce sample count to 30.
+Benchmarking Encrypt 400MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 15.556 s (100 iterations)
+Benchmarking Encrypt 400MB/OpenSSL ChaCha20: Analyzing
+Encrypt 400MB/OpenSSL ChaCha20
+                        time:   [156.50 ms 156.77 ms 157.03 ms]
+                        thrpt:  [2.4875 GiB/s 2.4917 GiB/s 2.4960 GiB/s]
+Benchmarking Encrypt 400MB/RustCrypto ChaCha20
+Benchmarking Encrypt 400MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 17.3s, or reduce sample count to 20.
+Benchmarking Encrypt 400MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 17.345 s (100 iterations)
+Benchmarking Encrypt 400MB/RustCrypto ChaCha20: Analyzing
+Encrypt 400MB/RustCrypto ChaCha20
+                        time:   [168.16 ms 168.52 ms 168.89 ms]
+                        thrpt:  [2.3129 GiB/s 2.3179 GiB/s 2.3229 GiB/s]
+Benchmarking Encrypt 400MB/ChaCha20
+Benchmarking Encrypt 400MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 61.2s, or reduce sample count to 10.
+Benchmarking Encrypt 400MB/ChaCha20: Collecting 100 samples in estimated 61.150 s (100 iterations)
+Benchmarking Encrypt 400MB/ChaCha20: Analyzing
+Encrypt 400MB/Chacha20
+					  time:   [609.07 ms 610.05 ms 611.08 ms]
+                        thrpt:  [654.58 MiB/s 655.68 MiB/s 656.74 MiB/s]
+Benchmarking Encrypt 400MB/DChaCha20
+Benchmarking Encrypt 400MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 60.7s, or reduce sample count to 10.
+Benchmarking Encrypt 400MB/DChaCha20: Collecting 100 samples in estimated 60.681 s (100 iterations)
+Benchmarking Encrypt 400MB/DChaCha20: Analyzing
+Encrypt 400MB/DChacha20
+					 time:   [607.75 ms 608.77 ms 609.83 ms]
+                        thrpt:  [655.92 MiB/s 657.06 MiB/s 658.17 MiB/s]
+
+Benchmarking Encrypt 600MB/OpenSSL ChaCha20
+Benchmarking Encrypt 600MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 23.2s, or reduce sample count to 20.
+Benchmarking Encrypt 600MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 23.214 s (100 iterations)
+Benchmarking Encrypt 600MB/OpenSSL ChaCha20: Analyzing
+Encrypt 600MB/OpenSSL ChaCha20
+                        time:   [233.73 ms 234.13 ms 234.52 ms]
+                        thrpt:  [2.4985 GiB/s 2.5027 GiB/s 2.5069 GiB/s]
+Benchmarking Encrypt 600MB/RustCrypto ChaCha20
+Benchmarking Encrypt 600MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 27.1s, or reduce sample count to 10.
+Benchmarking Encrypt 600MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 27.118 s (100 iterations)
+Benchmarking Encrypt 600MB/RustCrypto ChaCha20: Analyzing
+Encrypt 600MB/RustCrypto ChaCha20
+                        time:   [252.79 ms 253.36 ms 253.94 ms]
+                        thrpt:  [2.3074 GiB/s 2.3127 GiB/s 2.3179 GiB/s]
+Benchmarking Encrypt 600MB/ChaCha20
+Benchmarking Encrypt 600MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 92.1s, or reduce sample count to 10.
+Benchmarking Encrypt 600MB/ChaCha20: Collecting 100 samples in estimated 92.080 s (100 iterations)
+Benchmarking Encrypt 600MB/ChaCha20: Analyzing
+Encrypt 600MB/Chacha20
+					  time:   [915.80 ms 917.34 ms 918.91 ms]
+                        thrpt:  [652.95 MiB/s 654.06 MiB/s 655.16 MiB/s]
+Benchmarking Encrypt 600MB/DChaCha20
+Benchmarking Encrypt 600MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 91.4s, or reduce sample count to 10.
+Benchmarking Encrypt 600MB/DChaCha20: Collecting 100 samples in estimated 91.378 s (100 iterations)
+Benchmarking Encrypt 600MB/DChaCha20: Analyzing
+Encrypt 600MB/DChacha20
+					 time:   [910.92 ms 912.42 ms 913.97 ms]
+                        thrpt:  [656.48 MiB/s 657.60 MiB/s 658.68 MiB/s]
+
+Benchmarking Encrypt 800MB/OpenSSL ChaCha20
+Benchmarking Encrypt 800MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 31.3s, or reduce sample count to 10.
+Benchmarking Encrypt 800MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 31.293 s (100 iterations)
+Benchmarking Encrypt 800MB/OpenSSL ChaCha20: Analyzing
+Encrypt 800MB/OpenSSL ChaCha20
+                        time:   [310.61 ms 310.99 ms 311.41 ms]
+                        thrpt:  [2.5088 GiB/s 2.5121 GiB/s 2.5152 GiB/s]
+Benchmarking Encrypt 800MB/RustCrypto ChaCha20
+Benchmarking Encrypt 800MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 35.8s, or reduce sample count to 10.
+Benchmarking Encrypt 800MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 35.823 s (100 iterations)
+Benchmarking Encrypt 800MB/RustCrypto ChaCha20: Analyzing
+Encrypt 800MB/RustCrypto ChaCha20
+                        time:   [337.65 ms 338.48 ms 339.30 ms]
+                        thrpt:  [2.3025 GiB/s 2.3081 GiB/s 2.3138 GiB/s]
+Benchmarking Encrypt 800MB/ChaCha20
+Benchmarking Encrypt 800MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 121.8s, or reduce sample count to 10.
+Benchmarking Encrypt 800MB/ChaCha20: Collecting 100 samples in estimated 121.83 s (100 iterations)
+Benchmarking Encrypt 800MB/ChaCha20: Analyzing
+Encrypt 800MB/Chacha20
+					  time:   [1.2187 s 1.2205 s 1.2223 s]
+                        thrpt:  [654.50 MiB/s 655.49 MiB/s 656.45 MiB/s]
+Benchmarking Encrypt 800MB/DChaCha20
+Benchmarking Encrypt 800MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 122.8s, or reduce sample count to 10.
+Benchmarking Encrypt 800MB/DChaCha20: Collecting 100 samples in estimated 122.78 s (100 iterations)
+Benchmarking Encrypt 800MB/DChaCha20: Analyzing
+Encrypt 800MB/DChacha20
+					 time:   [1.2177 s 1.2197 s 1.2218 s]
+                        thrpt:  [654.76 MiB/s 655.87 MiB/s 656.97 MiB/s]
+
+Benchmarking Encrypt 1GB/OpenSSL ChaCha20
+Benchmarking Encrypt 1GB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 39.8s, or reduce sample count to 10.
+Benchmarking Encrypt 1GB/OpenSSL ChaCha20: Collecting 100 samples in estimated 39.788 s (100 iterations)
+Benchmarking Encrypt 1GB/OpenSSL ChaCha20: Analyzing
+Encrypt 1GB/OpenSSL ChaCha20
+                        time:   [396.58 ms 397.06 ms 397.58 ms]
+                        thrpt:  [2.5152 GiB/s 2.5185 GiB/s 2.5215 GiB/s]
+Benchmarking Encrypt 1GB/RustCrypto ChaCha20
+Benchmarking Encrypt 1GB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 49.4s, or reduce sample count to 10.
+Benchmarking Encrypt 1GB/RustCrypto ChaCha20: Collecting 100 samples in estimated 49.445 s (100 iterations)
+Benchmarking Encrypt 1GB/RustCrypto ChaCha20: Analyzing
+Encrypt 1GB/RustCrypto ChaCha20
+                        time:   [429.45 ms 430.14 ms 430.88 ms]
+                        thrpt:  [2.3208 GiB/s 2.3248 GiB/s 2.3286 GiB/s]
+Benchmarking Encrypt 1GB/ChaCha20
+Benchmarking Encrypt 1GB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 155.9s, or reduce sample count to 10.
+Benchmarking Encrypt 1GB/ChaCha20: Collecting 100 samples in estimated 155.93 s (100 iterations)
+Benchmarking Encrypt 1GB/ChaCha20: Analyzing
+Encrypt 1GB/Chacha20
+					    time:   [1.5593 s 1.5615 s 1.5639 s]
+                        thrpt:  [654.78 MiB/s 655.77 MiB/s 656.71 MiB/s]
+Benchmarking Encrypt 1GB/DChaCha20
+Benchmarking Encrypt 1GB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 156.5s, or reduce sample count to 10.
+Benchmarking Encrypt 1GB/DChaCha20: Collecting 100 samples in estimated 156.50 s (100 iterations)
+Benchmarking Encrypt 1GB/DChaCha20: Analyzing
+Encrypt 1GB/DChacha20
+					   time:   [1.5560 s 1.5584 s 1.5609 s]
+                        thrpt:  [656.05 MiB/s 657.08 MiB/s 658.08 MiB/s]
+
+Benchmarking Decrypt 1B/OpenSSL ChaCha20
+Benchmarking Decrypt 1B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0007 s (9.9M iterations)
+Benchmarking Decrypt 1B/OpenSSL ChaCha20: Analyzing
+Decrypt 1B/OpenSSL ChaCha20
+                        time:   [503.40 ns 503.50 ns 503.60 ns]
+                        thrpt:  [1.8937 MiB/s 1.8941 MiB/s 1.8945 MiB/s]
+Benchmarking Decrypt 1B/RustCrypto ChaCha20
+Benchmarking Decrypt 1B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0000 s (1.5B iterations)
+Benchmarking Decrypt 1B/RustCrypto ChaCha20: Analyzing
+Decrypt 1B/RustCrypto ChaCha20
+                        time:   [3.3512 ns 3.3587 ns 3.3647 ns]
+                        thrpt:  [283.43 MiB/s 283.94 MiB/s 284.58 MiB/s]
+Benchmarking Decrypt 1B/ChaCha20
+Benchmarking Decrypt 1B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1B/ChaCha20: Collecting 100 samples in estimated 5.0001 s (54M iterations)
+Benchmarking Decrypt 1B/ChaCha20: Analyzing
+Decrypt 1B/Chacha20
+					     time:   [91.978 ns 92.016 ns 92.062 ns]
+                        thrpt:  [10.359 MiB/s 10.364 MiB/s 10.369 MiB/s]
+Benchmarking Decrypt 1B/DChaCha20
+Benchmarking Decrypt 1B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1B/DChaCha20: Collecting 100 samples in estimated 5.0004 s (27M iterations)
+Benchmarking Decrypt 1B/DChaCha20: Analyzing
+Decrypt 1B/DChacha20
+					    time:   [184.33 ns 184.87 ns 185.43 ns]
+                        thrpt:  [5.1430 MiB/s 5.1585 MiB/s 5.1738 MiB/s]
+
+Benchmarking Decrypt 16B/OpenSSL ChaCha20
+Benchmarking Decrypt 16B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 16B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0017 s (9.7M iterations)
+Benchmarking Decrypt 16B/OpenSSL ChaCha20: Analyzing
+Decrypt 16B/OpenSSL ChaCha20
+                        time:   [511.07 ns 511.67 ns 512.41 ns]
+                        thrpt:  [29.779 MiB/s 29.822 MiB/s 29.857 MiB/s]
+Benchmarking Decrypt 16B/RustCrypto ChaCha20
+Benchmarking Decrypt 16B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 16B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0001 s (197M iterations)
+Benchmarking Decrypt 16B/RustCrypto ChaCha20: Analyzing
+Decrypt 16B/RustCrypto ChaCha20
+                        time:   [25.685 ns 25.759 ns 25.835 ns]
+                        thrpt:  [590.63 MiB/s 592.37 MiB/s 594.08 MiB/s]
+Benchmarking Decrypt 16B/ChaCha20
+Benchmarking Decrypt 16B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 16B/ChaCha20: Collecting 100 samples in estimated 5.0002 s (54M iterations)
+Benchmarking Decrypt 16B/ChaCha20: Analyzing
+Decrypt 16B/Chacha20
+					    time:   [92.271 ns 92.511 ns 92.753 ns]
+                        thrpt:  [164.51 MiB/s 164.94 MiB/s 165.37 MiB/s]
+Benchmarking Decrypt 16B/DChaCha20
+Benchmarking Decrypt 16B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 16B/DChaCha20: Collecting 100 samples in estimated 5.0003 s (39M iterations)
+Benchmarking Decrypt 16B/DChaCha20: Analyzing
+Decrypt 16B/DChacha20
+					   time:   [128.50 ns 128.84 ns 129.19 ns]
+                        thrpt:  [118.11 MiB/s 118.43 MiB/s 118.75 MiB/s]
+
+Benchmarking Decrypt 32B/OpenSSL ChaCha20
+Benchmarking Decrypt 32B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 32B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0003 s (9.7M iterations)
+Benchmarking Decrypt 32B/OpenSSL ChaCha20: Analyzing
+Decrypt 32B/OpenSSL ChaCha20
+                        time:   [515.89 ns 516.02 ns 516.16 ns]
+                        thrpt:  [59.124 MiB/s 59.140 MiB/s 59.155 MiB/s]
+Benchmarking Decrypt 32B/RustCrypto ChaCha20
+Benchmarking Decrypt 32B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 32B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0001 s (103M iterations)
+Benchmarking Decrypt 32B/RustCrypto ChaCha20: Analyzing
+Decrypt 32B/RustCrypto ChaCha20
+                        time:   [49.134 ns 49.145 ns 49.157 ns]
+                        thrpt:  [620.82 MiB/s 620.97 MiB/s 621.11 MiB/s]
+Benchmarking Decrypt 32B/ChaCha20
+Benchmarking Decrypt 32B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 32B/ChaCha20: Collecting 100 samples in estimated 5.0001 s (51M iterations)
+Benchmarking Decrypt 32B/ChaCha20: Analyzing
+Decrypt 32B/Chacha20
+					    time:   [97.908 ns 98.090 ns 98.301 ns]
+                        thrpt:  [310.45 MiB/s 311.12 MiB/s 311.70 MiB/s]
+Benchmarking Decrypt 32B/DChaCha20
+Benchmarking Decrypt 32B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 32B/DChaCha20: Collecting 100 samples in estimated 5.0005 s (36M iterations)
+Benchmarking Decrypt 32B/DChaCha20: Analyzing
+Decrypt 32B/DChacha20
+					   time:   [138.32 ns 138.47 ns 138.66 ns]
+                        thrpt:  [220.09 MiB/s 220.38 MiB/s 220.62 MiB/s]
+
+Benchmarking Decrypt 64B/OpenSSL ChaCha20
+Benchmarking Decrypt 64B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 64B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0026 s (9.7M iterations)
+Benchmarking Decrypt 64B/OpenSSL ChaCha20: Analyzing
+Decrypt 64B/OpenSSL ChaCha20
+                        time:   [513.07 ns 514.23 ns 515.30 ns]
+                        thrpt:  [118.45 MiB/s 118.69 MiB/s 118.96 MiB/s]
+Benchmarking Decrypt 64B/RustCrypto ChaCha20
+Benchmarking Decrypt 64B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 64B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0004 s (60M iterations)
+Benchmarking Decrypt 64B/RustCrypto ChaCha20: Analyzing
+Decrypt 64B/RustCrypto ChaCha20
+                        time:   [83.623 ns 83.668 ns 83.726 ns]
+                        thrpt:  [728.99 MiB/s 729.49 MiB/s 729.88 MiB/s]
+Benchmarking Decrypt 64B/ChaCha20
+Benchmarking Decrypt 64B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 64B/ChaCha20: Collecting 100 samples in estimated 5.0000 s (54M iterations)
+Benchmarking Decrypt 64B/ChaCha20: Analyzing
+Decrypt 64B/Chacha20
+					    time:   [92.450 ns 92.675 ns 92.920 ns]
+                        thrpt:  [656.86 MiB/s 658.59 MiB/s 660.19 MiB/s]
+Benchmarking Decrypt 64B/DChaCha20
+Benchmarking Decrypt 64B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 64B/DChaCha20: Collecting 100 samples in estimated 5.0000 s (54M iterations)
+Benchmarking Decrypt 64B/DChaCha20: Analyzing
+Decrypt 64B/DChacha20
+					   time:   [91.769 ns 91.953 ns 92.161 ns]
+                        thrpt:  [662.27 MiB/s 663.76 MiB/s 665.10 MiB/s]
+
+Benchmarking Decrypt 100B/OpenSSL ChaCha20
+Benchmarking Decrypt 100B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 100B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0006 s (8.2M iterations)
+Benchmarking Decrypt 100B/OpenSSL ChaCha20: Analyzing
+Decrypt 100B/OpenSSL ChaCha20
+                        time:   [610.57 ns 611.81 ns 612.82 ns]
+                        thrpt:  [155.62 MiB/s 155.88 MiB/s 156.19 MiB/s]
+Benchmarking Decrypt 100B/RustCrypto ChaCha20
+Benchmarking Decrypt 100B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 100B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0006 s (37M iterations)
+Benchmarking Decrypt 100B/RustCrypto ChaCha20: Analyzing
+Decrypt 100B/RustCrypto ChaCha20
+                        time:   [134.17 ns 134.29 ns 134.45 ns]
+                        thrpt:  [709.31 MiB/s 710.15 MiB/s 710.80 MiB/s]
+Benchmarking Decrypt 100B/ChaCha20
+Benchmarking Decrypt 100B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 100B/ChaCha20: Collecting 100 samples in estimated 5.0003 s (27M iterations)
+Benchmarking Decrypt 100B/ChaCha20: Analyzing
+Decrypt 100B/Chacha20
+					   time:   [184.08 ns 184.17 ns 184.28 ns]
+                        thrpt:  [517.53 MiB/s 517.83 MiB/s 518.07 MiB/s]
+Benchmarking Decrypt 100B/DChaCha20
+Benchmarking Decrypt 100B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 100B/DChaCha20: Collecting 100 samples in estimated 5.0007 s (24M iterations)
+Benchmarking Decrypt 100B/DChaCha20: Analyzing
+Decrypt 100B/DChacha20
+					  time:   [212.59 ns 213.15 ns 213.68 ns]
+                        thrpt:  [446.30 MiB/s 447.42 MiB/s 448.60 MiB/s]
+
+Benchmarking Decrypt 300B/OpenSSL ChaCha20
+Benchmarking Decrypt 300B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 300B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0005 s (7.1M iterations)
+Benchmarking Decrypt 300B/OpenSSL ChaCha20: Analyzing
+Decrypt 300B/OpenSSL ChaCha20
+                        time:   [700.64 ns 702.13 ns 703.86 ns]
+                        thrpt:  [406.48 MiB/s 407.48 MiB/s 408.34 MiB/s]
+Benchmarking Decrypt 300B/RustCrypto ChaCha20
+Benchmarking Decrypt 300B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 300B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0001 s (23M iterations)
+Benchmarking Decrypt 300B/RustCrypto ChaCha20: Analyzing
+Decrypt 300B/RustCrypto ChaCha20
+                        time:   [219.90 ns 220.48 ns 221.08 ns]
+                        thrpt:  [1.2638 GiB/s 1.2672 GiB/s 1.2706 GiB/s]
+Benchmarking Decrypt 300B/ChaCha20
+Benchmarking Decrypt 300B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 300B/ChaCha20: Collecting 100 samples in estimated 5.0001 s (11M iterations)
+Benchmarking Decrypt 300B/ChaCha20: Analyzing
+Decrypt 300B/Chacha20
+					   time:   [461.21 ns 461.63 ns 462.18 ns]
+                        thrpt:  [619.02 MiB/s 619.76 MiB/s 620.33 MiB/s]
+Benchmarking Decrypt 300B/DChaCha20
+Benchmarking Decrypt 300B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 300B/DChaCha20: Collecting 100 samples in estimated 5.0020 s (10M iterations)
+Benchmarking Decrypt 300B/DChaCha20: Analyzing
+Decrypt 300B/DChacha20
+					  time:   [496.76 ns 498.08 ns 499.32 ns]
+                        thrpt:  [572.99 MiB/s 574.41 MiB/s 575.94 MiB/s]
+
+Benchmarking Decrypt 500B/OpenSSL ChaCha20
+Benchmarking Decrypt 500B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 500B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0016 s (6.9M iterations)
+Benchmarking Decrypt 500B/OpenSSL ChaCha20: Analyzing
+Decrypt 500B/OpenSSL ChaCha20
+                        time:   [719.16 ns 720.27 ns 721.66 ns]
+                        thrpt:  [660.75 MiB/s 662.03 MiB/s 663.05 MiB/s]
+Benchmarking Decrypt 500B/RustCrypto ChaCha20
+Benchmarking Decrypt 500B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 500B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0006 s (13M iterations)
+Benchmarking Decrypt 500B/RustCrypto ChaCha20: Analyzing
+Decrypt 500B/RustCrypto ChaCha20
+                        time:   [397.95 ns 398.85 ns 399.84 ns]
+                        thrpt:  [1.1646 GiB/s 1.1675 GiB/s 1.1702 GiB/s]
+Benchmarking Decrypt 500B/ChaCha20
+Benchmarking Decrypt 500B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 500B/ChaCha20: Collecting 100 samples in estimated 5.0032 s (6.8M iterations)
+Benchmarking Decrypt 500B/ChaCha20: Analyzing
+Decrypt 500B/Chacha20
+					   time:   [740.64 ns 741.35 ns 742.25 ns]
+                        thrpt:  [642.42 MiB/s 643.20 MiB/s 643.81 MiB/s]
+Benchmarking Decrypt 500B/DChaCha20
+Benchmarking Decrypt 500B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 500B/DChaCha20: Collecting 100 samples in estimated 5.0012 s (6.4M iterations)
+Benchmarking Decrypt 500B/DChaCha20: Analyzing
+Decrypt 500B/DChacha20
+					  time:   [777.94 ns 780.05 ns 782.13 ns]
+                        thrpt:  [609.67 MiB/s 611.29 MiB/s 612.95 MiB/s]
+
+Benchmarking Decrypt 700B/OpenSSL ChaCha20
+Benchmarking Decrypt 700B/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 700B/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0016 s (5.8M iterations)
+Benchmarking Decrypt 700B/OpenSSL ChaCha20: Analyzing
+Decrypt 700B/OpenSSL ChaCha20
+                        time:   [865.75 ns 865.92 ns 866.10 ns]
+                        thrpt:  [770.78 MiB/s 770.94 MiB/s 771.09 MiB/s]
+Benchmarking Decrypt 700B/RustCrypto ChaCha20
+Benchmarking Decrypt 700B/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 700B/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0009 s (11M iterations)
+Benchmarking Decrypt 700B/RustCrypto ChaCha20: Analyzing
+Decrypt 700B/RustCrypto ChaCha20
+                        time:   [436.42 ns 437.20 ns 438.17 ns]
+                        thrpt:  [1.4878 GiB/s 1.4912 GiB/s 1.4938 GiB/s]
+Benchmarking Decrypt 700B/ChaCha20
+Benchmarking Decrypt 700B/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 700B/ChaCha20: Collecting 100 samples in estimated 5.0016 s (4.8M iterations)
+Benchmarking Decrypt 700B/ChaCha20: Analyzing
+Decrypt 700B/Chacha20
+					   time:   [1.0283 µs 1.0309 µs 1.0337 µs]
+                        thrpt:  [645.79 MiB/s 647.57 MiB/s 649.23 MiB/s]
+Benchmarking Decrypt 700B/DChaCha20
+Benchmarking Decrypt 700B/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 700B/DChaCha20: Collecting 100 samples in estimated 5.0021 s (4.7M iterations)
+Benchmarking Decrypt 700B/DChaCha20: Analyzing
+Decrypt 700B/DChacha20
+					  time:   [1.0634 µs 1.0662 µs 1.0691 µs]
+                        thrpt:  [624.45 MiB/s 626.11 MiB/s 627.75 MiB/s]
+
+Benchmarking Decrypt 1KB/OpenSSL ChaCha20
+Benchmarking Decrypt 1KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0006 s (6.5M iterations)
+Benchmarking Decrypt 1KB/OpenSSL ChaCha20: Analyzing
+Decrypt 1KB/OpenSSL ChaCha20
+                        time:   [772.64 ns 774.65 ns 776.62 ns]
+                        thrpt:  [1.2280 GiB/s 1.2311 GiB/s 1.2343 GiB/s]
+Benchmarking Decrypt 1KB/RustCrypto ChaCha20
+Benchmarking Decrypt 1KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0004 s (12M iterations)
+Benchmarking Decrypt 1KB/RustCrypto ChaCha20: Analyzing
+Decrypt 1KB/RustCrypto ChaCha20
+                        time:   [423.05 ns 423.76 ns 424.62 ns]
+                        thrpt:  [2.2460 GiB/s 2.2505 GiB/s 2.2543 GiB/s]
+Benchmarking Decrypt 1KB/ChaCha20
+Benchmarking Decrypt 1KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1KB/ChaCha20: Collecting 100 samples in estimated 5.0011 s (3.3M iterations)
+Benchmarking Decrypt 1KB/ChaCha20: Analyzing
+Decrypt 1KB/Chacha20
+					    time:   [1.4820 µs 1.4854 µs 1.4892 µs]
+                        thrpt:  [655.76 MiB/s 657.43 MiB/s 658.95 MiB/s]
+Benchmarking Decrypt 1KB/DChaCha20
+Benchmarking Decrypt 1KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1KB/DChaCha20: Collecting 100 samples in estimated 5.0019 s (3.4M iterations)
+Benchmarking Decrypt 1KB/DChaCha20: Analyzing
+Decrypt 1KB/DChacha20
+					   time:   [1.4699 µs 1.4715 µs 1.4735 µs]
+                        thrpt:  [662.74 MiB/s 663.66 MiB/s 664.39 MiB/s]
+
+Benchmarking Decrypt 3KB/OpenSSL ChaCha20
+Benchmarking Decrypt 3KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 3KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0057 s (3.6M iterations)
+Benchmarking Decrypt 3KB/OpenSSL ChaCha20: Analyzing
+Decrypt 3KB/OpenSSL ChaCha20
+                        time:   [1.3709 µs 1.3750 µs 1.3790 µs]
+                        thrpt:  [2.0747 GiB/s 2.0807 GiB/s 2.0870 GiB/s]
+Benchmarking Decrypt 3KB/RustCrypto ChaCha20
+Benchmarking Decrypt 3KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 3KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0048 s (4.1M iterations)
+Benchmarking Decrypt 3KB/RustCrypto ChaCha20: Analyzing
+Decrypt 3KB/RustCrypto ChaCha20
+                        time:   [1.2247 µs 1.2250 µs 1.2254 µs]
+                        thrpt:  [2.3347 GiB/s 2.3355 GiB/s 2.3361 GiB/s]
+Benchmarking Decrypt 3KB/ChaCha20
+Benchmarking Decrypt 3KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 3KB/ChaCha20: Collecting 100 samples in estimated 5.0069 s (1.1M iterations)
+Benchmarking Decrypt 3KB/ChaCha20: Analyzing
+Decrypt 3KB/Chacha20
+					    time:   [4.4900 µs 4.5007 µs 4.5103 µs]
+                        thrpt:  [649.55 MiB/s 650.94 MiB/s 652.49 MiB/s]
+Benchmarking Decrypt 3KB/DChaCha20
+Benchmarking Decrypt 3KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 3KB/DChaCha20: Collecting 100 samples in estimated 5.0115 s (1.1M iterations)
+Benchmarking Decrypt 3KB/DChaCha20: Analyzing
+Decrypt 3KB/DChacha20
+					   time:   [4.4111 µs 4.4121 µs 4.4132 µs]
+                        thrpt:  [663.85 MiB/s 664.02 MiB/s 664.17 MiB/s]
+
+Benchmarking Decrypt 5KB/OpenSSL ChaCha20
+Benchmarking Decrypt 5KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 5KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0001 s (2.5M iterations)
+Benchmarking Decrypt 5KB/OpenSSL ChaCha20: Analyzing
+Decrypt 5KB/OpenSSL ChaCha20
+                        time:   [1.9609 µs 1.9645 µs 1.9686 µs]
+                        thrpt:  [2.4222 GiB/s 2.4273 GiB/s 2.4317 GiB/s]
+Benchmarking Decrypt 5KB/RustCrypto ChaCha20
+Benchmarking Decrypt 5KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 5KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0006 s (2.4M iterations)
+Benchmarking Decrypt 5KB/RustCrypto ChaCha20: Analyzing
+Decrypt 5KB/RustCrypto ChaCha20
+                        time:   [2.0384 µs 2.0408 µs 2.0439 µs]
+                        thrpt:  [2.3330 GiB/s 2.3365 GiB/s 2.3393 GiB/s]
+Benchmarking Decrypt 5KB/ChaCha20
+Benchmarking Decrypt 5KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 5KB/ChaCha20: Collecting 100 samples in estimated 5.0259 s (672k iterations)
+Benchmarking Decrypt 5KB/ChaCha20: Analyzing
+Decrypt 5KB/Chacha20
+					    time:   [7.3850 µs 7.3992 µs 7.4162 µs]
+                        thrpt:  [658.40 MiB/s 659.91 MiB/s 661.18 MiB/s]
+Benchmarking Decrypt 5KB/DChaCha20
+Benchmarking Decrypt 5KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 5KB/DChaCha20: Collecting 100 samples in estimated 5.0375 s (677k iterations)
+Benchmarking Decrypt 5KB/DChaCha20: Analyzing
+Decrypt 5KB/DChacha20
+					   time:   [7.3593 µs 7.3755 µs 7.3943 µs]
+                        thrpt:  [660.35 MiB/s 662.03 MiB/s 663.49 MiB/s]
+
+Benchmarking Decrypt 7KB/OpenSSL ChaCha20
+Benchmarking Decrypt 7KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 7KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0028 s (1.9M iterations)
+Benchmarking Decrypt 7KB/OpenSSL ChaCha20: Analyzing
+Decrypt 7KB/OpenSSL ChaCha20
+                        time:   [2.6254 µs 2.6325 µs 2.6387 µs]
+                        thrpt:  [2.5299 GiB/s 2.5359 GiB/s 2.5427 GiB/s]
+Benchmarking Decrypt 7KB/RustCrypto ChaCha20
+Benchmarking Decrypt 7KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 7KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0082 s (1.7M iterations)
+Benchmarking Decrypt 7KB/RustCrypto ChaCha20: Analyzing
+Decrypt 7KB/RustCrypto ChaCha20
+                        time:   [2.8945 µs 2.8985 µs 2.9020 µs]
+                        thrpt:  [2.3004 GiB/s 2.3031 GiB/s 2.3064 GiB/s]
+Benchmarking Decrypt 7KB/ChaCha20
+Benchmarking Decrypt 7KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 7KB/ChaCha20: Collecting 100 samples in estimated 5.0100 s (475k iterations)
+Benchmarking Decrypt 7KB/ChaCha20: Analyzing
+Decrypt 7KB/Chacha20
+					    time:   [10.333 µs 10.335 µs 10.337 µs]
+                        thrpt:  [661.31 MiB/s 661.46 MiB/s 661.59 MiB/s]
+Benchmarking Decrypt 7KB/DChaCha20
+Benchmarking Decrypt 7KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 7KB/DChaCha20: Collecting 100 samples in estimated 5.0018 s (485k iterations)
+Benchmarking Decrypt 7KB/DChaCha20: Analyzing
+Decrypt 7KB/DChacha20
+					   time:   [10.305 µs 10.322 µs 10.342 µs]
+                        thrpt:  [660.98 MiB/s 662.25 MiB/s 663.33 MiB/s]
+
+Benchmarking Decrypt 10KB/OpenSSL ChaCha20
+Benchmarking Decrypt 10KB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 10KB/OpenSSL ChaCha20: Collecting 100 samples in estimated 5.0129 s (1.4M iterations)
+Benchmarking Decrypt 10KB/OpenSSL ChaCha20: Analyzing
+Decrypt 10KB/OpenSSL ChaCha20
+                        time:   [3.5231 µs 3.5339 µs 3.5440 µs]
+                        thrpt:  [2.6910 GiB/s 2.6986 GiB/s 2.7069 GiB/s]
+Benchmarking Decrypt 10KB/RustCrypto ChaCha20
+Benchmarking Decrypt 10KB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 10KB/RustCrypto ChaCha20: Collecting 100 samples in estimated 5.0117 s (1.2M iterations)
+Benchmarking Decrypt 10KB/RustCrypto ChaCha20: Analyzing
+Decrypt 10KB/RustCrypto ChaCha20
+                        time:   [4.0529 µs 4.0537 µs 4.0547 µs]
+                        thrpt:  [2.3520 GiB/s 2.3526 GiB/s 2.3531 GiB/s]
+Benchmarking Decrypt 10KB/ChaCha20
+Benchmarking Decrypt 10KB/ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 10KB/ChaCha20: Collecting 100 samples in estimated 5.0041 s (338k iterations)
+Benchmarking Decrypt 10KB/ChaCha20: Analyzing
+Decrypt 10KB/Chacha20
+					   time:   [14.766 µs 14.770 µs 14.776 µs]
+                        thrpt:  [660.93 MiB/s 661.18 MiB/s 661.37 MiB/s]
+Benchmarking Decrypt 10KB/DChaCha20
+Benchmarking Decrypt 10KB/DChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 10KB/DChaCha20: Collecting 100 samples in estimated 5.0368 s (338k iterations)
+Benchmarking Decrypt 10KB/DChaCha20: Analyzing
+Decrypt 10KB/DChacha20
+					  time:   [14.761 µs 14.788 µs 14.822 µs]
+                        thrpt:  [658.88 MiB/s 660.40 MiB/s 661.60 MiB/s]
+
+Benchmarking Decrypt 1MB/OpenSSL ChaCha20
+Benchmarking Decrypt 1MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 6.4830 s (20k iterations)
+Benchmarking Decrypt 1MB/OpenSSL ChaCha20: Analyzing
+Decrypt 1MB/OpenSSL ChaCha20
+                        time:   [321.48 µs 322.17 µs 322.98 µs]
+                        thrpt:  [3.0236 GiB/s 3.0312 GiB/s 3.0377 GiB/s]
+Benchmarking Decrypt 1MB/RustCrypto ChaCha20
+Benchmarking Decrypt 1MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 1MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 6.3695 s (15k iterations)
+Benchmarking Decrypt 1MB/RustCrypto ChaCha20: Analyzing
+Decrypt 1MB/RustCrypto ChaCha20
+                        time:   [415.89 µs 416.76 µs 417.73 µs]
+                        thrpt:  [2.3378 GiB/s 2.3432 GiB/s 2.3481 GiB/s]
+Benchmarking Decrypt 1MB/ChaCha20
+Benchmarking Decrypt 1MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.7s, enable flat sampling, or reduce sample count to 50.
+Benchmarking Decrypt 1MB/ChaCha20: Collecting 100 samples in estimated 7.6904 s (5050 iterations)
+Benchmarking Decrypt 1MB/ChaCha20: Analyzing
+Decrypt 1MB/Chacha20
+					    time:   [1.5257 ms 1.5299 ms 1.5341 ms]
+                        thrpt:  [651.86 MiB/s 653.65 MiB/s 655.42 MiB/s]
+Benchmarking Decrypt 1MB/DChaCha20
+Benchmarking Decrypt 1MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.7s, enable flat sampling, or reduce sample count to 50.
+Benchmarking Decrypt 1MB/DChaCha20: Collecting 100 samples in estimated 7.7102 s (5050 iterations)
+Benchmarking Decrypt 1MB/DChaCha20: Analyzing
+Decrypt 1MB/DChacha20
+					   time:   [1.5199 ms 1.5243 ms 1.5284 ms]
+                        thrpt:  [654.30 MiB/s 656.04 MiB/s 657.94 MiB/s]
+
+Benchmarking Decrypt 50MB/OpenSSL ChaCha20
+Benchmarking Decrypt 50MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 50MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 6.2000 s (300 iterations)
+Benchmarking Decrypt 50MB/OpenSSL ChaCha20: Analyzing
+Decrypt 50MB/OpenSSL ChaCha20
+                        time:   [20.623 ms 20.644 ms 20.666 ms]
+                        thrpt:  [2.3627 GiB/s 2.3652 GiB/s 2.3676 GiB/s]
+Benchmarking Decrypt 50MB/RustCrypto ChaCha20
+Benchmarking Decrypt 50MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 50MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 6.3130 s (300 iterations)
+Benchmarking Decrypt 50MB/RustCrypto ChaCha20: Analyzing
+Decrypt 50MB/RustCrypto ChaCha20
+                        time:   [21.108 ms 21.159 ms 21.208 ms]
+                        thrpt:  [2.3023 GiB/s 2.3077 GiB/s 2.3132 GiB/s]
+Benchmarking Decrypt 50MB/ChaCha20
+Benchmarking Decrypt 50MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.6s, or reduce sample count to 60.
+Benchmarking Decrypt 50MB/ChaCha20: Collecting 100 samples in estimated 7.6132 s (100 iterations)
+Benchmarking Decrypt 50MB/ChaCha20: Analyzing
+Decrypt 50MB/Chacha20
+					   time:   [76.322 ms 76.480 ms 76.639 ms]
+                        thrpt:  [652.41 MiB/s 653.77 MiB/s 655.12 MiB/s]
+Benchmarking Decrypt 50MB/DChaCha20
+Benchmarking Decrypt 50MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 7.6s, or reduce sample count to 60.
+Benchmarking Decrypt 50MB/DChaCha20: Collecting 100 samples in estimated 7.5955 s (100 iterations)
+Benchmarking Decrypt 50MB/DChaCha20: Analyzing
+Decrypt 50MB/DChacha20
+					  time:   [75.958 ms 76.112 ms 76.269 ms]
+                        thrpt:  [655.57 MiB/s 656.93 MiB/s 658.26 MiB/s]
+
+Benchmarking Decrypt 100MB/OpenSSL ChaCha20
+Benchmarking Decrypt 100MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 100MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 8.0830 s (200 iterations)
+Benchmarking Decrypt 100MB/OpenSSL ChaCha20: Analyzing
+Decrypt 100MB/OpenSSL ChaCha20
+                        time:   [40.763 ms 40.801 ms 40.834 ms]
+                        thrpt:  [2.3915 GiB/s 2.3935 GiB/s 2.3957 GiB/s]
+Benchmarking Decrypt 100MB/RustCrypto ChaCha20
+Benchmarking Decrypt 100MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+Benchmarking Decrypt 100MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 8.6036 s (200 iterations)
+Benchmarking Decrypt 100MB/RustCrypto ChaCha20: Analyzing
+Decrypt 100MB/RustCrypto ChaCha20
+                        time:   [42.460 ms 42.546 ms 42.626 ms]
+                        thrpt:  [2.2910 GiB/s 2.2953 GiB/s 2.3000 GiB/s]
+Benchmarking Decrypt 100MB/ChaCha20
+Benchmarking Decrypt 100MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 15.5s, or reduce sample count to 30.
+Benchmarking Decrypt 100MB/ChaCha20: Collecting 100 samples in estimated 15.486 s (100 iterations)
+Benchmarking Decrypt 100MB/ChaCha20: Analyzing
+Decrypt 100MB/Chacha20
+					  time:   [152.58 ms 152.89 ms 153.22 ms]
+                        thrpt:  [652.67 MiB/s 654.05 MiB/s 655.38 MiB/s]
+Benchmarking Decrypt 100MB/DChaCha20
+Benchmarking Decrypt 100MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 15.2s, or reduce sample count to 30.
+Benchmarking Decrypt 100MB/DChaCha20: Collecting 100 samples in estimated 15.216 s (100 iterations)
+Benchmarking Decrypt 100MB/DChaCha20: Analyzing
+Decrypt 100MB/DChacha20
+					 time:   [151.90 ms 152.20 ms 152.51 ms]
+                        thrpt:  [655.70 MiB/s 657.02 MiB/s 658.33 MiB/s]
+
+Benchmarking Decrypt 200MB/OpenSSL ChaCha20
+Benchmarking Decrypt 200MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 8.1s, or reduce sample count to 60.
+Benchmarking Decrypt 200MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 8.0950 s (100 iterations)
+Benchmarking Decrypt 200MB/OpenSSL ChaCha20: Analyzing
+Decrypt 200MB/OpenSSL ChaCha20
+                        time:   [80.063 ms 80.144 ms 80.236 ms]
+                        thrpt:  [2.4342 GiB/s 2.4370 GiB/s 2.4395 GiB/s]
+Benchmarking Decrypt 200MB/RustCrypto ChaCha20
+Benchmarking Decrypt 200MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 8.7s, or reduce sample count to 50.
+Benchmarking Decrypt 200MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 8.6688 s (100 iterations)
+Benchmarking Decrypt 200MB/RustCrypto ChaCha20: Analyzing
+Decrypt 200MB/RustCrypto ChaCha20
+                        time:   [84.253 ms 84.451 ms 84.650 ms]
+                        thrpt:  [2.3073 GiB/s 2.3127 GiB/s 2.3182 GiB/s]
+Benchmarking Decrypt 200MB/ChaCha20
+Benchmarking Decrypt 200MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 30.4s, or reduce sample count to 10.
+Benchmarking Decrypt 200MB/ChaCha20: Collecting 100 samples in estimated 30.361 s (100 iterations)
+Benchmarking Decrypt 200MB/ChaCha20: Analyzing
+Decrypt 200MB/Chacha20
+					  time:   [305.27 ms 305.86 ms 306.46 ms]
+                        thrpt:  [652.61 MiB/s 653.89 MiB/s 655.16 MiB/s]
+Benchmarking Decrypt 200MB/DChaCha20
+Benchmarking Decrypt 200MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 30.2s, or reduce sample count to 10.
+Benchmarking Decrypt 200MB/DChaCha20: Collecting 100 samples in estimated 30.244 s (100 iterations)
+Benchmarking Decrypt 200MB/DChaCha20: Analyzing
+Decrypt 200MB/DChacha20
+					 time:   [303.99 ms 304.63 ms 305.28 ms]
+                        thrpt:  [655.13 MiB/s 656.54 MiB/s 657.93 MiB/s]
+
+Benchmarking Decrypt 300MB/OpenSSL ChaCha20
+Benchmarking Decrypt 300MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 12.0s, or reduce sample count to 40.
+Benchmarking Decrypt 300MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 11.969 s (100 iterations)
+Benchmarking Decrypt 300MB/OpenSSL ChaCha20: Analyzing
+Decrypt 300MB/OpenSSL ChaCha20
+                        time:   [119.93 ms 120.12 ms 120.31 ms]
+                        thrpt:  [2.4352 GiB/s 2.4390 GiB/s 2.4429 GiB/s]
+Benchmarking Decrypt 300MB/RustCrypto ChaCha20
+Benchmarking Decrypt 300MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 13.1s, or reduce sample count to 30.
+Benchmarking Decrypt 300MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 13.142 s (100 iterations)
+Benchmarking Decrypt 300MB/RustCrypto ChaCha20: Analyzing
+Decrypt 300MB/RustCrypto ChaCha20
+                        time:   [126.96 ms 127.25 ms 127.53 ms]
+                        thrpt:  [2.2972 GiB/s 2.3023 GiB/s 2.3076 GiB/s]
+Benchmarking Decrypt 300MB/ChaCha20
+Benchmarking Decrypt 300MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 46.0s, or reduce sample count to 10.
+Benchmarking Decrypt 300MB/ChaCha20: Collecting 100 samples in estimated 46.022 s (100 iterations)
+Benchmarking Decrypt 300MB/ChaCha20: Analyzing
+Decrypt 300MB/Chacha20
+					  time:   [459.60 ms 460.41 ms 461.21 ms]
+                        thrpt:  [650.46 MiB/s 651.59 MiB/s 652.74 MiB/s]
+Benchmarking Decrypt 300MB/DChaCha20
+Benchmarking Decrypt 300MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 45.3s, or reduce sample count to 10.
+Benchmarking Decrypt 300MB/DChaCha20: Collecting 100 samples in estimated 45.346 s (100 iterations)
+Benchmarking Decrypt 300MB/DChaCha20: Analyzing
+Decrypt 300MB/DChacha20
+					 time:   [455.63 ms 456.47 ms 457.33 ms]
+                        thrpt:  [655.99 MiB/s 657.22 MiB/s 658.44 MiB/s]
+
+Benchmarking Decrypt 400MB/OpenSSL ChaCha20
+Benchmarking Decrypt 400MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 16.0s, or reduce sample count to 30.
+Benchmarking Decrypt 400MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 16.030 s (100 iterations)
+Benchmarking Decrypt 400MB/OpenSSL ChaCha20: Analyzing
+Decrypt 400MB/OpenSSL ChaCha20
+                        time:   [159.94 ms 160.18 ms 160.40 ms]
+                        thrpt:  [2.4353 GiB/s 2.4387 GiB/s 2.4424 GiB/s]
+Benchmarking Decrypt 400MB/RustCrypto ChaCha20
+Benchmarking Decrypt 400MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 17.6s, or reduce sample count to 20.
+Benchmarking Decrypt 400MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 17.629 s (100 iterations)
+Benchmarking Decrypt 400MB/RustCrypto ChaCha20: Analyzing
+Decrypt 400MB/RustCrypto ChaCha20
+                        time:   [169.12 ms 169.52 ms 169.91 ms]
+                        thrpt:  [2.2990 GiB/s 2.3043 GiB/s 2.3097 GiB/s]
+Benchmarking Decrypt 400MB/ChaCha20
+Benchmarking Decrypt 400MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 61.6s, or reduce sample count to 10.
+Benchmarking Decrypt 400MB/ChaCha20: Collecting 100 samples in estimated 61.631 s (100 iterations)
+Benchmarking Decrypt 400MB/ChaCha20: Analyzing
+Decrypt 400MB/Chacha20
+					  time:   [609.36 ms 610.37 ms 611.42 ms]
+                        thrpt:  [654.21 MiB/s 655.34 MiB/s 656.43 MiB/s]
+Benchmarking Decrypt 400MB/DChaCha20
+Benchmarking Decrypt 400MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 61.2s, or reduce sample count to 10.
+Benchmarking Decrypt 400MB/DChaCha20: Collecting 100 samples in estimated 61.151 s (100 iterations)
+Benchmarking Decrypt 400MB/DChaCha20: Analyzing
+Decrypt 400MB/DChacha20
+					 time:   [607.23 ms 608.21 ms 609.24 ms]
+                        thrpt:  [656.56 MiB/s 657.67 MiB/s 658.73 MiB/s]
+
+Benchmarking Decrypt 600MB/OpenSSL ChaCha20
+Benchmarking Decrypt 600MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 23.8s, or reduce sample count to 20.
+Benchmarking Decrypt 600MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 23.803 s (100 iterations)
+Benchmarking Decrypt 600MB/OpenSSL ChaCha20: Analyzing
+Decrypt 600MB/OpenSSL ChaCha20
+                        time:   [237.67 ms 238.02 ms 238.39 ms]
+                        thrpt:  [2.4579 GiB/s 2.4617 GiB/s 2.4653 GiB/s]
+Benchmarking Decrypt 600MB/RustCrypto ChaCha20
+Benchmarking Decrypt 600MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 27.1s, or reduce sample count to 10.
+Benchmarking Decrypt 600MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 27.057 s (100 iterations)
+Benchmarking Decrypt 600MB/RustCrypto ChaCha20: Analyzing
+Decrypt 600MB/RustCrypto ChaCha20
+                        time:   [253.10 ms 253.73 ms 254.36 ms]
+                        thrpt:  [2.3036 GiB/s 2.3093 GiB/s 2.3151 GiB/s]
+Benchmarking Decrypt 600MB/ChaCha20
+Benchmarking Decrypt 600MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 91.0s, or reduce sample count to 10.
+Benchmarking Decrypt 600MB/ChaCha20: Collecting 100 samples in estimated 90.982 s (100 iterations)
+Benchmarking Decrypt 600MB/ChaCha20: Analyzing
+Decrypt 600MB/Chacha20
+					  time:   [914.65 ms 916.28 ms 917.96 ms]
+                        thrpt:  [653.62 MiB/s 654.82 MiB/s 655.99 MiB/s]
+Benchmarking Decrypt 600MB/DChaCha20
+Benchmarking Decrypt 600MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 90.8s, or reduce sample count to 10.
+Benchmarking Decrypt 600MB/DChaCha20: Collecting 100 samples in estimated 90.793 s (100 iterations)
+Benchmarking Decrypt 600MB/DChaCha20: Analyzing
+Decrypt 600MB/DChacha20
+					 time:   [912.50 ms 914.24 ms 916.04 ms]
+                        thrpt:  [655.00 MiB/s 656.28 MiB/s 657.53 MiB/s]
+
+Benchmarking Decrypt 800MB/OpenSSL ChaCha20
+Benchmarking Decrypt 800MB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 32.0s, or reduce sample count to 10.
+Benchmarking Decrypt 800MB/OpenSSL ChaCha20: Collecting 100 samples in estimated 32.022 s (100 iterations)
+Benchmarking Decrypt 800MB/OpenSSL ChaCha20: Analyzing
+Decrypt 800MB/OpenSSL ChaCha20
+                        time:   [316.87 ms 317.38 ms 317.92 ms]
+                        thrpt:  [2.4574 GiB/s 2.4616 GiB/s 2.4655 GiB/s]
+Benchmarking Decrypt 800MB/RustCrypto ChaCha20
+Benchmarking Decrypt 800MB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 35.9s, or reduce sample count to 10.
+Benchmarking Decrypt 800MB/RustCrypto ChaCha20: Collecting 100 samples in estimated 35.879 s (100 iterations)
+Benchmarking Decrypt 800MB/RustCrypto ChaCha20: Analyzing
+Decrypt 800MB/RustCrypto ChaCha20
+                        time:   [336.94 ms 337.69 ms 338.45 ms]
+                        thrpt:  [2.3083 GiB/s 2.3135 GiB/s 2.3187 GiB/s]
+Benchmarking Decrypt 800MB/ChaCha20
+Benchmarking Decrypt 800MB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 123.9s, or reduce sample count to 10.
+Benchmarking Decrypt 800MB/ChaCha20: Collecting 100 samples in estimated 123.90 s (100 iterations)
+Benchmarking Decrypt 800MB/ChaCha20: Analyzing
+Decrypt 800MB/Chacha20
+					  time:   [1.2215 s 1.2234 s 1.2254 s]
+                        thrpt:  [652.83 MiB/s 653.89 MiB/s 654.94 MiB/s]
+Benchmarking Decrypt 800MB/DChaCha20
+Benchmarking Decrypt 800MB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 122.2s, or reduce sample count to 10.
+Benchmarking Decrypt 800MB/DChaCha20: Collecting 100 samples in estimated 122.22 s (100 iterations)
+Benchmarking Decrypt 800MB/DChaCha20: Analyzing
+Decrypt 800MB/DChacha20
+					 time:   [1.2110 s 1.2127 s 1.2145 s]
+                        thrpt:  [658.69 MiB/s 659.69 MiB/s 660.61 MiB/s]
+
+Benchmarking Decrypt 1GB/OpenSSL ChaCha20
+Benchmarking Decrypt 1GB/OpenSSL ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 40.4s, or reduce sample count to 10.
+Benchmarking Decrypt 1GB/OpenSSL ChaCha20: Collecting 100 samples in estimated 40.396 s (100 iterations)
+Benchmarking Decrypt 1GB/OpenSSL ChaCha20: Analyzing
+Decrypt 1GB/OpenSSL ChaCha20
+                        time:   [405.96 ms 406.57 ms 407.18 ms]
+                        thrpt:  [2.4559 GiB/s 2.4596 GiB/s 2.4633 GiB/s]
+Benchmarking Decrypt 1GB/RustCrypto ChaCha20
+Benchmarking Decrypt 1GB/RustCrypto ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 49.7s, or reduce sample count to 10.
+Benchmarking Decrypt 1GB/RustCrypto ChaCha20: Collecting 100 samples in estimated 49.708 s (100 iterations)
+Benchmarking Decrypt 1GB/RustCrypto ChaCha20: Analyzing
+Decrypt 1GB/RustCrypto ChaCha20
+                        time:   [432.32 ms 433.29 ms 434.26 ms]
+                        thrpt:  [2.3028 GiB/s 2.3079 GiB/s 2.3131 GiB/s]
+Benchmarking Decrypt 1GB/ChaCha20
+Benchmarking Decrypt 1GB/ChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 157.1s, or reduce sample count to 10.
+Benchmarking Decrypt 1GB/ChaCha20: Collecting 100 samples in estimated 157.14 s (100 iterations)
+Benchmarking Decrypt 1GB/ChaCha20: Analyzing
+Decrypt 1GB/Chacha20
+					    time:   [1.5651 s 1.5676 s 1.5702 s]
+                        thrpt:  [652.16 MiB/s 653.21 MiB/s 654.25 MiB/s]
+Benchmarking Decrypt 1GB/DChaCha20
+Benchmarking Decrypt 1GB/DChaCha20: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 156.2s, or reduce sample count to 10.
+Benchmarking Decrypt 1GB/DChaCha20: Collecting 100 samples in estimated 156.17 s (100 iterations)
+Benchmarking Decrypt 1GB/DChaCha20: Analyzing
+Decrypt 1GB/DChacha20
+					   time:   [1.5584 s 1.5609 s 1.5635 s]
+                        thrpt:  [654.95 MiB/s 656.02 MiB/s 657.07 MiB/s]
+
