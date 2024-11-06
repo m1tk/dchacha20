@@ -4,9 +4,7 @@ pub struct ChaCha20 {
     /// This is where the initial state is stored
     state: u32x16,
     /// Calculated keystream
-    keystream: u32x16,
-    /// Keystream as u8 buffer
-    keystream_buffer: u8x64
+    keystream: u32x16
 }
 
 impl ChaCha20 {
@@ -29,8 +27,7 @@ impl ChaCha20 {
                 // Bit counter + nonce
                 0, u32_from_le_bytes(&nonce[..4]), u32_from_le_bytes(&nonce[4..8]), u32_from_le_bytes(&nonce[8..12]),
             ]),
-            keystream: u32x16::from_array([0u32; 16]),
-            keystream_buffer: u8x64::from_array([0u8; 64])
+            keystream: u32x16::from_array([0u32; 16])
         }
     }
 
@@ -87,22 +84,17 @@ impl ChaCha20 {
     }
 
     #[inline(always)]
-    fn convert_keystream_to_u8_arr(&mut self) {
-        self.keystream_buffer = self.keystream.to_le_bytes();
-    }
-
-    #[inline(always)]
     fn apply_keystream(&mut self, buff: &mut [u8]) {
         self.block_fn();
-        self.convert_keystream_to_u8_arr();
 
         if buff.len() == 64 {
             let mut b = u8x64::from_slice(buff);
-            b ^= self.keystream_buffer;
+            b ^= self.keystream.to_le_bytes();
             b.copy_to_slice(buff);
         } else {
+            let ks = self.keystream.to_le_bytes();
             for (i, byte) in buff.iter_mut().enumerate() {
-                *byte ^= self.keystream_buffer[i];
+                *byte ^= ks[i];
             }
         }
     }
